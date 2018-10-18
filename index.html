@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/add-to-homescreen-master/style/addtohomescreen.css">
+    <script src="/add-to-homescreen-master/src/addtohomescreen.js"></script>
+
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta name="theme-color" content="#30add1" />
+   <meta name="mobile-web-app-capable" content="yes">
+   <preference name="KeyboardDisplayRequiresUserAction" value="false" />
+    <!--Let browser know website is optimized for mobile-->
+    <lindk rel="manifest" href="manifest.json">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js"  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
+      <style media="screen">
+        .hfcolor{
+          background-color: #30add1;
+        }
+      </style>
+      <style>
+      #side_full_div{
+        transition: opacity 0.2s;
+      }
+      .open {
+        margin-right: -110%;
+        margin-left: 110%;
+        height: 100%;
+        background: white;
+        -webkit-transition: margin-left 400ms; /* For Safari 3.1 to 6.0 */
+        transition: margin-left 400ms;
+
+
+
+      }
+      a{
+        cursor: pointer;
+      }
+      .abso{
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        position: fixed;
+        z-index: 3;
+      }
+      #container{
+        transition: opacity 0.1s;
+      }
+      .content{
+        overflow: auto;
+
+
+      }
+      .ztres{
+        z-index: 23;
+      }
+      .recorrido{
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        position: fixed;
+        z-index: 4;
+        opacity: 0;
+        transition: opacity 0.3s, visibility 0.3s;
+      }
+      body{
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        -webkit-touch-callout: none; /* iOS Safari */
+          -webkit-user-select: none; /* Safari */
+           -khtml-user-select: none; /* Konqueror HTML */
+             -moz-user-select: none; /* Firefox */
+              -ms-user-select: none; /* Internet Explorer/Edge */
+                  user-select: none; /* Non-prefixed version, currently
+                                        supported by Chrome and Opera */
+      }
+      </style>
+    <title>Expo 2018</title>
+    <script type="text/javascript">
+
+      if (window.location.href.split("/")[3][0]=="?") {
+        window.location.href = "/";
+      }
+      if (localStorage.getItem("noprimeravez")) {
+        mostrar_contenido_de_container = true;
+      }else {
+        var mostrar_contenido_de_container = false;
+        //alert(localStorage.getItem("noprimeravez"))
+        localStorage.setItem('noprimeravez', true);
+      }
+
+
+    </script>
+  </head>
+  <body id="body">
+    <script src="downloader.js"></script>
+    <script src="expo.js"></script>
+    <script src="extra.js"></script>
+
+
+
+
+
+
+
+
+<div class="recorrido" id="absolute" style="visibility: hidden;">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <!--<div class="abso" id="abso" style="z-index: -1;">-->
+    	<div class="open z-depth-4 abso" id="open">
+        <div style="width:100%; height:100%; overflow: auto;" id="side_full_div">
+          <div class="navbar-fixed">
+
+
+
+            <nav class="hfcolor">
+              <div class="nav-wrapper">
+                <a id="logo" class="brand-logo center">Logo</a>
+                <ul>
+                  <li><a href="#!goback"><i class="material-icons">arrow_back</i></a></li>
+                </ul>
+              </div>
+            </nav>
+
+
+
+          </div>
+          <div id="content" class="content">
+
+          </div>
+
+        </div>
+    	</div>
+    <!--</div>-->
+
+    <nav style="z-index: 1; position:fixed; margin-top:0px;">
+      <div class="nav-wrapper hfcolor">
+        <a href="#!" class="brand-logo">Expo 2018</a>
+        <a data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
+        <ul class="right">
+          <li><a href="#!buscar"><i class="material-icons">search</i></a></li>
+        </ul>
+        <!--
+        <a id="closer_btn" class="right ztres" onclick="goback()"><i class="material-icons left">close</i></a>
+        -->
+        <ul class="right hide-on-med-and-down">
+          <li class="sidenav-close"><a href="#!home"><i class="material-icons left">home</i>home</a></li>
+          <li class="sidenav-close"><a href="#!actividades"><i class="material-icons left">format_list_bulleted</i>Actividades</a></li>
+          <li class="sidenav-close"><a href="#!secciones"><i class="material-icons left">format_list_numbered</i>Secciones</a></li>
+          <li class="sidenav-close"><div class="divider"></div></li>
+          <li class="sidenav-close"><a class="subheader">Más</a></li>
+          <li class="sidenav-close"><a href="#!creadores"><i class="material-icons left">people</i>Creadores</a></li>
+          <li class="sidenav-close"><a href="#!informacion"><i class="material-icons left">info_outline</i>Informacion</a></li>
+          <li class="sidenav-close"><div class="divider"></div></li>
+          <li class="sidenav-close"><a class="subheader">Creacion y testeo</a></li>
+          <li class="sidenav-close"><a href="compiler.html"><i class="material-icons left">settings_ethernet</i>Creador de paginas</a></li>
+          <li class="sidenav-close"><a href="javascript: force_update()" onclick="force_update()"><i class="material-icons left">sync</i>Recargar App</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+
+      <li class="sidenav-close"><a href="#!home"><i class="material-icons left">home</i>home</a></li>
+      <li class="sidenav-close" class="sidenav-close"><a href="#!actividades"><i class="material-icons left">format_list_bulleted</i>Actividades</a></li>
+      <li class="sidenav-close"><a href="#!secciones"><i class="material-icons left">format_list_numbered</i>Secciones</a></li>
+      <li class="sidenav-close"><div class="divider"></div></li>
+      <li class="sidenav-close"><a class="subheader">Más</a></li>
+      <li class="sidenav-close"><a href="#!creadores"><i class="material-icons left">people</i>Creadores</a></li>
+      <li class="sidenav-close"><a href="#!informacion"><i class="material-icons left">info_outline</i>Informacion</a></li>
+      <li class="sidenav-close"><div class="divider"></div></li>
+      <li class="sidenav-close"><a class="subheader">Creacion y testeo</a></li>
+      <li class="sidenav-close"><a href="compiler.html"><i class="material-icons left">settings_ethernet</i>Creador de paginas</a></li>
+      <li class="sidenav-close"><a href="javascript: force_update()" onclick="force_update()"><i class="material-icons left">sync</i>Recargar App</a></li>
+    </ul>
+    <br>
+    <br>
+    <br><br>
+  <div id="container" style="visibility: hidden;">
+
+    <div align="center">
+
+<br><br>
+    <div class="preloader-wrapper big active">
+  <div class="spinner-layer spinner-blue-only">
+    <div class="circle-clipper left">
+      <div class="circle"></div>
+    </div><div class="gap-patch">
+      <div class="circle"></div>
+    </div><div class="circle-clipper right">
+      <div class="circle"></div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+
+$( document ).ready(function() {
+
+    if (mostrar_contenido_de_container) {
+      mostrar("home.htm");
+    }else{
+      hide_container();
+      show_absolute();
+      window.location.href = "#!recorrido";
+    }
+});
+
+</script>
+    </div></div>
+
+
+    <script type="text/javascript">
+      if (mostrar_contenido_de_container) {
+        show_container();
+      }else{
+        hide_container();
+        show_absolute();
+      }
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Compiled and minified JavaScript --> <!--JavaScript at end of body for optimized loading-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.sidenav').sidenav();
+      });
+    </script>
+  </body>
+</html>
+
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script type="text/javascript">
+if('serviceWorker' in navigator) {
+  navigator.serviceWorker
+           .register('/sw.js')
+           .then(function() { console.log("Service Worker Registered"); });
+}
+</script>

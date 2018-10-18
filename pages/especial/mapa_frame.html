@@ -1,0 +1,126 @@
+<style media="screen">
+  iframe {
+    display: block;       /* iframes are inline by default */
+    background: #000;
+    border: none;         /* Reset default border */
+    height: 100vh;        /* Viewport-relative units */
+    width: 100vw;
+  }
+</style>
+
+<iframe src="mapa.html" width="100%" height="100%" border="0"></iframe>
+<style media="screen">
+
+
+
+  #abajo {
+      visibility: hidden; /* Hidden by default. Visible on click */
+      min-width: 250px; /* Set a default minimum width */
+      margin-left: 0px; /* Divide value of min-width by 2 */
+      background-color: #333; /* Black background color */
+      color: #fff; /* White text color */
+      text-align: center; /* Centered text */
+      border-radius: 2px; /* Rounded borders */
+      padding: 16px; /* Padding */
+      position: fixed; /* Sit on top of the screen */
+      z-index: 1; /* Add a z-index if needed */
+      left: 1.5%; /* Center the snackbar */
+      bottom: 1.5%; /* 30px from the bottom */
+      width: 97%;
+  }
+
+  /* Show the snackbar when clicking on a button (class added with JavaScript) */
+  #abajo.show {
+      visibility: visible; /* Show the snackbar */
+      /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+     However, delay the fade out process for 2.5 seconds */
+     -webkit-animation: fadein;
+     animation: fadein 0.5s;
+  }
+
+  @-webkit-keyframes fadein {
+      from {bottom: 0; opacity: 0;}
+      to {bottom: 30px; opacity: 1;}
+  }
+
+  @keyframes fadein {
+      from {bottom: 0; opacity: 0;}
+      to {bottom: 30px; opacity: 1;}
+  }
+
+  @-webkit-keyframes fadeout {
+      from {bottom: 30px; opacity: 1;}
+      to {bottom: 0; opacity: 0;}
+  }
+
+  @keyframes fadeout {
+      from {bottom: 30px; opacity: 1;}
+      to {bottom: 0; opacity: 0;}
+  }
+</style>
+<div id="abajo" class="">
+d
+</div>
+<script type="text/javascript">
+  var last_toast = "";
+  setInterval(function(){
+    if (localStorage.getItem("redirect") && localStorage.getItem("redirect") != "" && last_toast != localStorage.getItem("redirect")) {
+      last_toast = localStorage.getItem("redirect");
+      if (last_toast[0] != "!" && last_toast[1] != "!") {
+
+
+        localStorage.setItem('redirect', "");
+        for (var i = 0; i < lista.length; i++) {
+          if (lista[i].name == last_toast) {
+
+
+            var b_html = document.getElementById('texample').innerHTML+""
+            console.log(b_html);
+            b_html = b_html.replace("_LINK_", "#!"+last_toast)
+            b_html = b_html.replace("visibility:_HAIDEN_", "")
+
+
+
+            if (lista[i].title) {
+              b_html = b_html.replace("_TITLE_", lista[i].title)
+            }else {
+              b_html = b_html.replace("_TITLE_",  last_toast)
+            }
+
+            if (lista[i].title) {
+              b_html = b_html.replace("_VER_", lista[i].title)
+            }else {
+              b_html = b_html.replace("_VER_",  last_toast)
+            }
+
+            if (lista[i].descripcion) {
+              b_html = b_html.replace("_DESC_", lista[i].descripcion)
+            }else {
+              b_html = b_html.replace("_DESC_", "")
+            }
+            console.log(b_html);
+            document.getElementById('abajo').innerHTML = b_html;
+
+            document.getElementById('abajo').className = "show"
+
+          }
+        }
+      }else {
+        var b_html = document.getElementById('texample2').innerHTML+"";
+        b_html = b_html.replace("_TITLE_",  last_toast.replace("!!",""));
+        document.getElementById('abajo').innerHTML = b_html;
+        document.getElementById('abajo').className = "show"
+      }
+
+      //window.location.href = last_toast
+    }
+   }, 300);
+</script>
+<div id="texample" style="visible:hidden;">
+  <h4>_TITLE_</h4>
+  <p>_DESC_</p>
+  <a class="waves-effect btn-flat white-text indigo" style="visibility:_HAIDEN_" href="_LINK_">ENTRAR A _VER_</a>
+</div>
+<div id="texample2" style="visible:hidden;">
+  <h5>_TITLE_</h5>
+</div>

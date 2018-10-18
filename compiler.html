@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta name="theme-color" content="#30add1" />
+   <meta name="mobile-web-app-capable" content="yes">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js"  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
+      <style media="screen">
+        .hfcolor{
+          background-color: #30add1;
+        }
+      </style>
+      <style>
+      .open {
+        margin-right: -110%;
+        margin-left: 110%;
+        height: 100%;
+        background: white;
+        -webkit-transition: margin-left 400ms; /* For Safari 3.1 to 6.0 */
+        transition: margin-left 400ms;
+      }
+      a{
+        cursor: pointer;
+      }
+      .abso{
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        position: fixed;
+        z-index: 3;
+      }
+      .content{
+        overflow: auto;
+
+
+      }
+      .ztres{
+        z-index: 23;
+      }
+      </style>
+    <title></title>
+  </head>
+  <body id="body"><!--style="overflow-x: hidden;"-->
+
+    <nav style="z-index: 0;">
+      <div class="nav-wrapper hfcolor">
+        <a href="#!" class="brand-logo">Expo 2018</a>
+        <a data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
+        <!--
+        <a id="closer_btn" class="right ztres" onclick="close_content()"><i class="material-icons left">close</i></a>
+        -->
+        <ul class="right hide-on-med-and-down">
+          <li><a href="1.html">algo 1</a></li>
+          <li><a href="2.html">algo algo</a></li>
+          <li><a href="3.html">3X algo</a></li>
+          <li><a href="javascript: force_update()">Actualizar</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container" id="container">
+      <div class="row">
+        <div class="col s12 m6">
+
+          <br>
+          <h1>Codigo</h1>
+          <br>
+          <div class="row">
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s12">
+                  <!--<textarea id="textarea1" class="materialize-textarea"></textarea>-->
+                  <br>
+                  <textarea id="textarea1" contenteditable="true" style="min-height: 20px; background-color: #CCC">
+                    //Algo de codigo
+                  </textarea>
+                  <br>
+                  <br>
+                  <a class="btn" id="bt1" onclick="compile_and_save()"><i class="material-icons right">cloud</i>GENERAR</a>
+                </div>
+              </div>
+            </form>
+          </div>
+
+
+        </div>
+    <div class="col s12 m6">
+      <div id="compiled">
+
+      </div>
+
+
+
+      </div>
+
+     </div>
+     <div class="row">
+       <div class="col s12 m12">
+
+         <div style="overflow:auto; max-width:100%;">
+           <p>
+             Esta especie de "editor" permite crear archivos con los estilos y la forma de las paginas de esta app.
+             Existen varios comandos basicos para crear parrafos con texto y tarjetas con información links. <br>
+             <br>
+             ¿Comó se usa?
+             <br>
+             Hay que poner todo el codigo en el campo de texto de arriba, le das a GENERAR (también funciona con ctr+s).
+             Te va a aparecer el resultado y abajo el codigo html que luego se sube a la app y recién ahí ya sería visible para todos en la app.
+
+
+           </p>
+
+
+         <pre>
+
+
+           <h1>Estructura de tarjeta</h1>
+           <br>
+Nueva tarjeta -new_card
+__  Division para imagen -img_div
+__  __  Imagen -imagen NOMBREARCHIVO o http:LINK_EXTERNO //tambien se puede colocar un video con -video https://www.youtube.com/embed/thzm6oqK8O4
+__  __  Posible titulo sobre la imagen -titulo
+__  Cerrar img div -close_img_div
+__  Division para el contenido -content
+__  __ parrafo -p
+__  __  __  Cualquier texto
+__  __ cerrar_parrafo -p
+__  Cerrar division contenido -close_content
+__  Division LINKS -card_action
+__Cerrar division LINKS -close_action
+CERRAR TARJETA -close_card
+
+<h6>para crear enlaces que te lleven a paginas dentro de la app en la parte donde se pone el link se pone: #!NombreDeLaSeccionOPagina
+ej:</h6>
+
+-card_action
+
+-new_link #!home
+-texto_simple Inicio
+-close_link
+
+-close_action
+
+             <h4>Ejemplo:</h4>
+           -p sirve para abrir un parrafo
+-p
+
+
+las "//" se usan para poner comentario, todo lo que este despues de // va a estar como comentario del codigo y no aparecen en el resultado final
+
+Hola soy un texto con información
+
+//-close_p Cierra el parrafo
+-close_p
+
+//-new_card abre una tarjeta
+-new_card
+
+//-img_div division donde se pone una imagen y el titulo se puede poner tambien
+-img_div
+
+//PONER IMAGEN: -imagen ARCHIVO o -imagen http://LINK_EXTERNO
+-imagen images/electro.jpg
+//Poner un video: -video http://link &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Solo podes poner un video o una imagen pero no ambos
+-titulo Imagen de prueba
+
+//-close_img_div Cierra el div de la imagen
+-close_img_div
+
+//-content Contenido de texto de la tarjeta
+-content
+-p
+// ESTO ES UN COMENtARIO Y NO APARECE EN EL DOCUMENTO
+-texto_simple Hola como estas
+-close_p
+-texto_simple texto
+
+//-br deja un renglón
+-br
+HOLA SOY UN TEXTO MALDITO
+
+//-close_content Cierra el contenido (primero tiene que estar abierto
+-close_content
+
+//-card_action Aca pones los links (cerrar con -close_action)
+-card_action
+
+//-nuevo_link Nuevo link
+
+//-new_link #!NOMBREDEARCHIVODELAAPP
+//o sino -new_link http://LINK_EXTERNO
+//despues hay que cerrarlo y en el medio va el nombre del enlace
+
+-new_link #!home
+-texto_simple HOLA
+-close_link //Cierra el link
+
+//-close_action cierra la zona de links
+-close_action
+
+//-close_card Cierra la tarjeta
+-close_card
+
+
+
+
+
+Comandos de texto:
+-p //parrafo
+
+
+-texto_simple Culaquier texto podes poner acá
+
+-tachado <s>Texto tachado</s>
+-negrita <b>Texto en Negrita</b>
+-subrayado <u>Texto subrayado</u>
+-cursiva <i>Texto en cursiva</i>
+
+-close_p //cierra el parrafo
+
+
+</pre>
+
+</div>
+
+       </div>
+     </div>
+     <div class="row">
+       <div class="col s12 m6">
+         <h3>Ejemplos:</h4>
+       </div>
+     </div>
+     <div class="row">
+       <div class="col s12 m6">
+         <div class="row">
+         <div class="col s12">
+         <div class="card">
+         <div class="card-image">
+
+         <div class="video-container"><iframe width="853" height="480" src="https://www.youtube.com/embed/thzm6oqK8O4" frameborder="0" allowfullscreen></iframe></div>
+         </div>
+         <div class="card-content">
+         <span class="card-title">GATITOS GRACIOSOS</span>
+         <p>
+         Los gatitos son divertidos.
+         También son lindos y peludos.
+         <br />
+         Tambien son calentitos
+         <br />
+         <br />
+         Esto es una tarjeta de prueba
+         <p>
+         </div>
+         <div class="card-action">
+
+         <a href="#!home">
+         Inicio
+         </a>
+
+         <a href="https://youtube.com">
+
+         Youtube
+         </a>
+
+         </div>
+         </div>
+         </div>
+         </div>
+         <pre style="overflow-x: auto; width:100%;">
+-new_card
+-img_div
+-video https://www.youtube.com/embed/thzm6oqK8O4
+-close_img_div
+-content
+-titulo GATITOS GRACIOSOS
+-p
+Los gatitos son divertidos.
+También son lindos y peludos.
+-br
+Tambien son calentitos
+-br
+-br
+Esto es una tarjeta de prueba
+-p
+-close_content
+-card_action
+
+-new_link #!home
+-texto_simple Inicio
+-close_link
+
+-new_link https://youtube.com
+-texto_simple Youtube
+-close_link
+
+-close_action
+-close_card
+         </pre>
+
+       </div>
+
+
+
+       <div class="col s12 m6">
+         <div class="row">
+        <div class="col s12">
+        <div class="card">
+        <div class="card-image">
+        <img src="images/perroX3.jpg"/>
+        <span class="card-title">Perritos tiernos</span>
+        </div>
+        <div class="card-content">
+        <p>
+                 Los perros son muy boludos.
+                 También son lindos y peludos.
+        <br />
+                 Tambien son calentitos
+        <br />
+        <br />
+                 Esto es una tarjeta de prueba
+        <p>
+        </div>
+        <div class="card-action">
+
+        <a href="#!home">
+        Inicio
+        </a>
+
+        <a href="https://youtube.com">
+
+        Youtube
+        </a>
+
+        </div>
+        </div>
+        </div>
+        </div>
+         <pre style="overflow-x: auto; width:100%;">
+-new_card
+-img_div
+-imagen images/perroX3.jpg
+-titulo Perritos tiernos
+-close_img_div
+-content
+-p
+Los perros son muy boludos.
+También son lindos y peludos.
+-br
+Tambien son calentitos
+-br
+-br
+Esto es una tarjeta de prueba
+-p
+-close_content
+-card_action
+
+-new_link #!home
+-texto_simple Inicio
+-close_link
+
+-new_link https://youtube.com
+-texto_simple Youtube
+-close_link
+
+-close_action
+-close_card
+         </pre>
+
+
+       </div>
+
+
+       <div class="col s12 m6">
+         <div class="row">
+ <div class="col s12">
+ <div class="card">
+ <div class="card-content">
+ <span class="card-title">Hola</span>
+ <br />
+ <p>
+ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vulputate molestie orci, a gravida lectus efficitur et. Maecenas accumsan massa sed eros tincidunt, vel interdum nisl hendrerit. Etiam velit est, placerat nec orci ut, sodales suscipit arcu. Quisque commodo, nulla ac semper semper, ipsum nibh malesuada massa, at varius nisi tellus posuere urna. Ut gravida purus turpis, vel cursus dolor aliquet non. Proin ut nulla nec ipsum posuere auctor a et mi. Aenean at urna ipsum. Proin eu ligula sem. Pellentesque at maximus augue. In hac habitasse platea dictumst. Curabitur hendrerit at metus a eleifend. Duis egestas diam id feugiat pellentesque.
+ </p>
+ </div>
+ <div class="card-image">
+ <img src="images/perroX3.jpg"/>
+ </div>
+ <div class="card-content">
+ <p>
+ Maecenas suscipit purus vel consectetur aliquam. Cras eu dictum nisl, luctus interdum nisl. Sed dignissim ex eget massa vestibulum, non mattis lacus facilisis. Sed quis facilisis elit. Praesent imperdiet risus at enim blandit, vel rhoncus felis mollis. Quisque non dolor consequat, efficitur leo et, blandit sem. Etiam suscipit est et tempus venenatis.
+ </p>
+ </div>
+ </div>
+ </div>
+ </div>
+
+         <pre style="overflow-x: auto; width:100%;">
+
+-new_card
+-content
+-titulo Hola
+-br
+-p
+PARRAFO1
+-close_p
+-close_content
+-img_div
+-imagen images/perroX3.jpg
+-close_img_div
+-content
+-p
+PARRAFO2
+//Se puden poner parrafos como mas te guste
+-close_p
+-close_content
+-close_card
+
+         </pre>
+
+
+       </div>
+
+
+
+
+       <div class="col s12 m6">
+         <div class="row">
+           <h4>Parrafo</h4>
+           <p>
+
+           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vulputate molestie orci, a gravida lectus efficitur et. Maecenas accumsan massa sed eros
+           <s>tachado</s>
+           , vel interdum nisl hendrerit. Etiam velit est, placerat nec orci ut, sodales suscipit arcu. Quisque commodo, nulla ac semper semper,
+           <u>ipsum nibh subrayado massa</u>
+           , at varius nisi tellus posuere urna. Ut gravida purus turpis, vel cursus dolor aliquet non. Proin ut nulla nec ipsum posuere auctor a et mi.
+           <strong>Negrita </strong>
+           at urna ipsum. Proin eu ligula sem. Pellentesque at maximus augue. In hac habitasse platea dictumst. Curabitur hendrerit at metus a
+           <i>cursiva</i>
+           . Duis egestas diam id feugiat pellentesque.
+
+           </p>
+
+           <div class="row">
+           <div class="col s12">
+           <div class="card">
+           <div class="card-image">
+           <img src="images/perroX3.jpg"/>
+           </div>
+           </div>
+           </div>
+           </div>
+
+           <p>
+           Quisque eleifend a sem ut rutrum. Fusce at orci risus. Mauris vitae semper tortor, nec aliquet lectus. Pellentesque mattis rutrum nulla, at vulputate metus pharetra nec. Aenean tempus nulla rutrum ultrices vulputate. Suspendisse id faucibus magna. Ut fringilla metus quis justo cursus dignissim eu quis neque. Vivamus porta purus eget lobortis commodo.
+           </p>
+
+
+           <div class="row">
+           <div class="col s12">
+           <div class="card">
+           <div class="card-image">
+           <img src="images/perro.jpg"/>
+           </div>
+           Es un perro. XD
+           </div>
+           </div>
+           </div>
+
+
+         <pre style="overflow-x: auto; width:100%;">
+
+-big Parrafo
+-p
+
+-tachado tachado
+-subrayado subrayado
+-negrita Negrita
+
+-cursiva cursiva
+
+-p
+Parrafo
+-close_p
+-br
+texto
+
+-close_p
+
+-new_card
+-img_div
+-imagen images/perroX3.jpg
+-close_img_div
+-close_card
+
+-p
+Segundo parrafo o lo que sea (no hay limite de imagenes o parrafos)
+-close_p
+
+
+-new_card
+-img_div
+-imagen images/perro.jpg
+-close_img_div
+Es un perro. XD
+-close_card
+
+         </pre>
+
+
+       </div>
+
+
+
+
+     </div>
+    </div>
+
+
+
+
+
+
+<script type="text/javascript">
+
+//17 83
+  var keys = [];
+
+  var input = document.getElementById("textarea1");
+  var view = document.getElementById("compiled");
+
+
+
+
+  // Execute a function when the user releases a key on the keyboard
+  window.addEventListener("keyup", function(event) {
+    // Cancel the default action, if needed
+    //event.preventDefault();
+    keys[event.keyCode] = false;
+    // Number 13 is the "Enter" key on the keyboard
+  });
+  window.addEventListener("keydown", function(event) {
+    // Cancel the default action, if needed
+    //event.preventDefault();
+    keys[event.keyCode] = true;
+    // Number 13 is the "Enter" key on the keyboard
+    alert[event.keyCode]
+    if (keys[17] && keys[83]) {
+      event.preventDefault();
+      compile_and_save()
+      // Trigger the button element with a click
+      document.getElementById("bt1").click();
+    }
+  });
+</script>
+
+
+
+
+
+    <!-- Compiled and minified JavaScript --> <!--JavaScript at end of body for optimized loading-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script src="compiler.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.sidenav').sidenav();
+      });
+    </script>
+  </body>
+</html>
+
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>

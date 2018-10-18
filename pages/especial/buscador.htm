@@ -1,0 +1,224 @@
+<div style="position:fixed; min-height:50px; background-color:white; width:100%" class="z-depth-1">
+  <nav style="opacity:0;">
+
+  </nav>
+  <div id="resultados" class="container" style="overflow-y:auto;; overflow-x:hidden;">
+    Inserte texto para buscar...
+  </div>
+</div>
+<div id="gobackground" style="position:fixed; min-height:50px; background-color:grey; height: 100%; width:100%; opacity:0; z-index:-2;" onclick="goback(); document.getElementById('gobackground').style.display = 'none'; setTimeout(function () {document.getElementById('gobackground').style.display = '';}, 400);" class="z-depth-1">
+
+</div>
+<div style="position:absolute; margin-left:-1000px; opacity:0;">
+  <input id="NOHACEnADA" style="opacity:0;"/>
+</div>
+  <nav class="indigo" style="z-index:2;">
+    <div class="nav-wrapper">
+      <form>
+        <div class="input-field" id="ss">
+          <input id="search" type="search" tabindex="-1" required>
+          <label class="label-icon" onclick="set_search_focus();" for="search" style="cursor:pointer;"><i class="material-icons" id="search_icon">search</i></label>
+          <i class="material-icons" id="search_close" onclick="goback(); document.getElementById('gobackground').style.display = 'none';">close</i>
+         </div>
+      </form>
+   </div>
+</nav>
+<script type="text/javascript">
+
+  document.getElementById("search").addEventListener("keypress", function(event){
+    if (event.keyCode == 13) {
+        event.preventDefault();
+    }
+
+  });
+
+  function autobusqueda(){
+    var buscar = document.getElementById("search").value;
+    if (buscar == "") {
+      document.getElementById("resultados").innerText = "Inserte texto para buscar...";
+    }else {
+
+      var result_array = [];
+      var result_html = "No hay resultados...";
+      for (let i = 0; i < lista.length; i++) {
+        var title = "";
+        if (lista[i].title) {
+          title = lista[i].title;
+        }else {
+          title = lista[i].name;
+        }
+        var descr = "";
+
+        if (lista[i].descripcion) {
+          descr = lista[i].descripcion;
+        }else {
+          descr = "";
+        }
+
+        var alumnos = "";
+        if (lista[i].alumnos) {
+          alumnos = lista[i].alumnos;
+        }else {
+          alumnos = "";
+        }
+
+        var tags;
+        if (lista[i].tags) {
+          tags = lista[i].tags;
+        }else {
+          tags = false;
+        }
+        var buscable = true;
+        if (lista[i].buscable != undefined && lista[i].buscable == false) {
+          buscable = false;
+        }
+        var desc_buscable = true;
+        if (lista[i].desc_buscable != undefined && lista[i].desc_buscable == false) {
+          desc_buscable = false;
+        }
+        get(lista[i].file, function(file){
+          if (buscable) {
+            var newDiv = document.createElement("div");
+            newDiv.innerHTML = file;
+            var htmltext = "";
+            if (desc_buscable) {
+              var htmltext = newDiv.innerText;
+            }
+            var s_result = comparador_debusqueda(buscar, lista[i].name, htmltext)
+            if (s_result && s_result.finded_on_text1 && s_result.finded_on_text1 == true) {
+              s_result.importance = 3;
+            }
+            if (s_result && s_result.finded_on_text1 == false) {
+              s_result.importance = 1;
+            }
+
+            if (alumnos && alumnos != "") {
+              var a_result = comparador_debusqueda(buscar, "{}", alumnos)
+              if (a_result && a_result.res.trim() != "...") {
+                var nombre_de_alumno = a_result.res.trim().replace("...","");
+                console.log(nombre_de_alumno);
+                if (nombre_de_alumno && nombre_de_alumno != "") {
+                  s_result = {texto1_original: lista[i].name, res:"Alumno... "+nombre_de_alumno+" ... etc."}
+                  if (s_result) {
+                    s_result.importance = 2;
+                  }
+                }
+              }
+            }
+
+            if (!s_result) {
+              if (tags) {
+                var second_result = comparador_debusqueda(buscar, tags);
+                if (second_result) {
+                  s_result = {texto1_original: lista[i].name, res:""}
+                  if (s_result) {
+                    s_result.importance = 2;
+                  }
+                }
+              }
+            }
+            if (!s_result) {
+              if (title) {
+                var second_result = comparador_debusqueda(buscar, title);
+                if (second_result) {
+                  s_result = {texto1_original: lista[i].name, res:""}
+                  if (s_result) {
+                    s_result.importance = 3;
+                  }
+                }
+              }
+            }
+            if (s_result) {
+              result_array[i] = s_result;
+              result_array[i].title = title;
+              result_array[i].link = "#!"+lista[i].name;
+              if (descr) {
+                result_array[i].descr = descr;
+              }
+              console.log(s_result);
+            }
+          }
+          if (i == lista.length-1) {
+            //HACER LO FINAL
+            console.log("BUSQUEDA FINALIZADA");
+            console.log(result_array);
+            var something_finded = false;
+
+            //ORDENAR result_array POR ORDEN DE IMPORTANCIA
+            result_array.sort(function (a, b){
+                return (b.importance - a.importance)
+            })
+
+            for (var i2 = 0; i2 < result_array.length; i2++) {
+              if (result_array[i2]) {
+                if (something_finded == false) {
+                  result_html = "";
+                }
+                something_finded = true;
+                result_html += "<div style=\"cursor:pointer\" class=\"\" onclick='goback(); setTimeout(function(){  window.location.href = \" "+result_array[i2].link+" \";    }, 1);   '><p><b>"+result_array[i2].title+"</b></p>";
+                //result_html += "<div style=\"cursor:pointer\" class=\"hoverable\" onclick=' window.location.href = \" "+result_array[i2].link+" \";    '><p><b>"+result_array[i2].title+"</b></p>";
+                if (result_array[i2].res.trim()=="..." || result_array[i2].res.trim()=="") {
+
+                  if (result_array[i2].descr && result_array[i2].descr != "") {
+
+                    result_html += "<p>"+result_array[i2].descr+"</p></div>";
+                  }else {
+                    result_html += "</div>";
+                  }
+                }else {
+                  result_html += "<p>"+result_array[i2].res+"</p></div>";
+                }
+
+              }
+            }
+            document.getElementById("resultados").innerHTML = result_html;
+          }
+
+
+        });
+
+      }
+    }
+  }
+
+  function set_search_focus(){
+    document.getElementById("NOHACEnADA").click();
+    document.getElementById("NOHACEnADA").select();
+    document.getElementById("NOHACEnADA").focus();
+
+    document.getElementById("search").click();
+    document.getElementById("search").select();
+    document.getElementById("search").focus();
+    $("#search").click()
+    // $("#search").select()
+    // $('#search').trigger('click');
+    // $('#search').trigger("focus");
+    document.getElementById("search").focus();
+  }
+
+
+
+  setTimeout(function(){
+    $('#search').on('input',function(e){
+        autobusqueda();
+    });
+    set_search_focus()
+    setTimeout(function(){
+      document.getElementById("search_close").style.color = "black";
+      document.getElementById("search_close").style.opacity = 1;
+      document.getElementById("search_icon").style.color = "black";
+      document.getElementById("search_icon").style.opacity = 1;
+    }, 400);
+    setTimeout(function(){
+      set_search_focus();
+    }, 200);
+  }, 200);
+
+  setTimeout(function(){
+    set_search_focus();
+  }, 300);
+
+
+
+
+</script>

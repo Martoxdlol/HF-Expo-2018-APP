@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta name="theme-color" content="#30add1" />
+   <meta name="mobile-web-app-capable" content="yes">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js"  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
+      <style media="screen">
+        .hfcolor{
+          background-color: #30add1;
+        }
+      </style>
+
+    <title></title>
+  </head>
+  <body id="body" style="z-index:-2;"><!--style="overflow-x: hidden;"-->
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <div id="mostrar">
+            <div id="contador">
+              <table>
+                <thead>
+                  <tr>
+                      <th>Dias</th>
+                      <th>Horas</th>
+                      <th>Minutos</th>
+                      <th>Segundos</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td><h4 id="dias">--</h4></td>
+                    <td><h4 id="horas">--</h4></td>
+                    <td><h4 id="minutos">--</h4></td>
+                    <td><h4 id="segundos">--</h4s></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div id="comenzo" style="display:none;">
+            !COMEZO LA EXPO 2018¡
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <script type="text/javascript">
+      function ConteoRegresivo()
+      {
+        if (document.getElementById('mostrar')) {
+          var fecha = new Date('2018','10','9','7','30','00')
+          var hoy = new Date()
+          var dias = 0
+          var horas = 0
+          var minutos = 0
+          var segundos = 0
+          if (fecha>hoy)
+          {
+              var diferencia = (fecha.getTime()-hoy.getTime())/1000
+              dias = Math.floor(diferencia/86400)
+              diferencia = diferencia-(86400*dias)
+              horas = Math.floor(diferencia/3600)
+              diferencia = diferencia-(3600*horas)
+              minutos = Math.floor(diferencia/60)
+              diferencia = diferencia-(60*minutos)
+              segundos = Math.floor(diferencia)
+              document.getElementById('dias').innerHTML = dias;
+              document.getElementById('horas').innerHTML = horas;
+              document.getElementById('minutos').innerHTML = minutos;
+              document.getElementById('segundos').innerHTML = segundos;
+
+              if (dias>0 || horas>0 || minutos>0 || segundos>0)
+              {
+                  setTimeout("ConteoRegresivo()",1000)
+              }
+          }
+          else
+          {
+              document.getElementById('mostrar').innerHTML = document.getElementById('comenzo').innerHTML;
+          }
+        }
+      }
+      $( document ).ready(function() {
+        ConteoRegresivo();
+        console.log("Contando!");
+      });
+    </script>
+  </body>
+</html>
+
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
