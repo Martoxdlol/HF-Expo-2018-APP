@@ -63,8 +63,14 @@ var marcadores = [
     img_url:"images/literatura.png",
     icon:"marker",
   },
+  {
+    lat_lng:[-34.444549019670504, -58.70059671659047],
+    description:"Electrotecnia (taller): Muestra sobre el trabajo de los alumnos en esta materia.",
+    link:"electro",
+    img_url:"images/electro_icon.png",
+    icon:"marker",
+  },
 ]
-
 
 
 var markers = []

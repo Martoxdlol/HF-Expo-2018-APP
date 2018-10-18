@@ -24,9 +24,9 @@ var lista = [
     desc_buscable:false,
   },
   {
-    title: "Libro de los 50 años",
+    title: "Libro 50 años",
     name: "libro50",
-    file: "libro50.html",
+    file: "pages/especial/libro50.html",
   },
   {
     title: "Maderas",
@@ -73,7 +73,15 @@ var lista = [
     desc_buscable:false,
     buscable: false,
   },
+  {
+    title: "Electrotecnia",
+    name: "electro",
+    file: "pages/secciones/electro.html",
+    tags: "Electrotecnia transformadores tableros taller ojeda",
+    descripcion: "(taller) Muestra sobre el trabajo de los alumnos en esta materia.",
+  },
 ];
+
 
 var actividades = [
   {

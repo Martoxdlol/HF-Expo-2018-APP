@@ -40,7 +40,7 @@ var offlineFundamentals = [
   '/images/screenshot_actividades.jpg',
   '/images/screenshot_secciones.jpg',
   '/images/screenshot_mapa.jpg',
-  
+
 //SECCIONES
   '/pages/secciones/literatura.html',
   '/pages/secciones/maderas.html',
@@ -53,6 +53,7 @@ var offlineFundamentals = [
   '/pages/especial/actividades.html',
   '/pages/especial/buscador.htm',
   '/pages/especial/forceupdate.html',
+  'pages/especial/libro50.html',
   '/pages/especial/mapa_frame.html',
   '/pages/especial/mapa.js',
   '/pages/especial/recorrido.html',
