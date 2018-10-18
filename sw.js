@@ -42,6 +42,8 @@ var offlineFundamentals = [
   '/images/screenshot_mapa.jpg',
 
 //SECCIONES
+  '/pages/secciones/electro.html',
+  '/pages/secciones/hidroneumatica.html',
   '/pages/secciones/literatura.html',
   '/pages/secciones/maderas.html',
 

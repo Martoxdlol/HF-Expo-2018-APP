@@ -80,6 +80,13 @@ var lista = [
     tags: "Electrotecnia transformadores tableros taller ojeda",
     descripcion: "(taller) Muestra sobre el trabajo de los alumnos en esta materia.",
   },
+  {
+    title: "Hidroneumatica",
+    name: "hidroneumatica",
+    file: "pages/secciones/hidroneumatica.html",
+    tags: "hidroneumatica neumatica hidraulica taller gaudio melón tableros",
+    descripcion: "(taller) Circuitos hidraulicos y neumáticos. Muestra de termoformado.",
+  },
 ];
 
 
