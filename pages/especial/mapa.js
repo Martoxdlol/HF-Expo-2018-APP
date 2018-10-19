@@ -70,6 +70,13 @@ var marcadores = [
     img_url:"images/electro_icon.png",
     icon:"marker",
   },
+  {
+    lat_lng:[-34.44440903443079, -58.70054907935044],
+    description:"",
+    link:"hidroneumatica",
+    img_url:"images/hidro_icon.png",
+    icon:"marker",
+  },
 ]
 
 
