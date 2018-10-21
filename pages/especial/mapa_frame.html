@@ -7,7 +7,9 @@
     width: 100vw;
   }
 </style>
-
+<div style="position: fixed; z-index:2; margin:5px;">
+  <a class="btn-floating btn-large" onclick="goback();" style="color:#30add1; background-color:#30add1;"><i class="material-icons">arrow_back</i></a>
+</div>
 <iframe src="mapa.html" width="100%" height="100%" border="0"></iframe>
 <style media="screen">
 
@@ -76,7 +78,12 @@ d
 <script type="text/javascript">
   var last_toast = "";
   setInterval(function(){
-    if (localStorage.getItem("redirect") && localStorage.getItem("redirect") != "" && last_toast != localStorage.getItem("redirect")) {
+    if (localStorage.getItem("redirect") == "renew") {
+      last_toast = "";
+      localStorage.setItem('redirect', '');
+    }
+
+    if (localStorage.getItem("redirect") && localStorage.getItem("redirect") != "" && last_toast != localStorage.getItem("redirect") && localStorage.getItem("redirect") != "renew") {
       last_toast = localStorage.getItem("redirect");
       if (last_toast[0] != "!" && last_toast[1] != "!") {
 
@@ -131,7 +138,7 @@ d
 <div id="texample" style="visible:hidden;">
   <div style="width:100%">
     <div class="right">
-      <i class="material-icons" style="cursor:pointer;" onclick="document.getElementById('abajo').className = ''">close</i>
+      <i class="material-icons" style="cursor:pointer;" onclick="document.getElementById('abajo').className = ''; localStorage.setItem('redirect', 'renew');">close</i>
     </div>
   </div>
   <h4>_TITLE_</h4>
@@ -141,7 +148,7 @@ d
 <div id="texample2" style="visible:hidden;">
   <div style="width:100%">
     <div class="right">
-      <i class="material-icons" style="cursor:pointer;" onclick="document.getElementById('abajo').className = ''">close</i>
+      <i class="material-icons" style="cursor:pointer;" onclick="document.getElementById('abajo').className = ''; localStorage.setItem('redirect', 'renew');">close</i>
     </div>
   </div>
   <h5>_TITLE_</h5>

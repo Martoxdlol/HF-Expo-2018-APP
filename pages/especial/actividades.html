@@ -18,115 +18,138 @@
 </div>
 
 <script type="text/javascript">
-var t_html = "";
-for (var i = 0; i < actividades.length; i++) {
-  if (actividades[i] && actividades[i].time) {
+showActs();
+setInterval(function () {
+  showActs()
+}, 30000);
 
-    var nuevahora = "";
-    var dia;
-    if (actividades[i].time.trim().search("Viernes") == 0) {
-      dia = 9;
-      nuevahora = actividades[i].time.replace("Viernes ","")
-    }
-    if (actividades[i].time.trim().search("Sabado") == 0) {
-      dia = 10;
-      nuevahora = actividades[i].time.replace("Sabado ","")
-    }
-    var today;
+function showActs(){
+  var t_html = "";
+  for (var i = 0; i < actividades.length; i++) {
+    if (actividades[i] && actividades[i].time) {
 
-    var iniciada;
+      var nuevahora = "";
+      var dia;
+      if (actividades[i].time.trim().search("Viernes") == 0) {
+        dia = 9;
+        nuevahora = actividades[i].time.replace("Viernes ","")
+      }
+      if (actividades[i].time.trim().search("Sabado") == 0) {
+        dia = 10;
+        nuevahora = actividades[i].time.replace("Sabado ","")
+      }
+      var today;
+
+      var iniciada;
 
 
-    var now = new Date();
-    var day = now.getDate();
-    var mes = now.getMonth();
-    var año = now.getFullYear();
-    var hora = now.getHours();
-    var nowminutos = now.getMinutes();
+      var now = new Date();
+      var day = now.getDate();
+      var mes = now.getMonth();
+      var año = now.getFullYear();
+      var hora = now.getHours();
+      var nowminutos = now.getMinutes();
 
-    // //BORRAR
-    // mes = 10;
-    // day = 9;
-    // hora = 13;
-    // nowminutos = 22;
-    // //
+      // //BORRAR
+       // mes = 11;
+       // day = 9;
+       // hora = 13;
+       // nowminutos = 42;
+      // //
 
-    if (dia == 9 && day == 10 && año == 2018 && mes == 11) {
-      iniciada = true;
-      today = false;
-    }else if (dia == 10 && day == 9 && año == 2018 && mes == 11) {
-      iniciada = true;
-      today = false;
-    }else if (dia == day && año == 2018 && mes == 11) {
-      iniciada = true;
-      today = true;
-    }else {
-      iniciada = false;
-    }
+      if (dia == 9 && day == 10 && año == 2018 && mes == 11) {
+        iniciada = true;
+        today = false;
+      }else if (dia == 10 && day == 9 && año == 2018 && mes == 11) {
+        iniciada = true;
+        today = false;
+      }else if (dia == day && año == 2018 && mes == 11) {
+        iniciada = true;
+        today = true;
+      }else {
+        iniciada = false;
+      }
 
-    var FechaAMostrar = "";
-    var tf = "";
+      var FechaAMostrar = "";
+      var tf = "";
 
-    if (iniciada && today == true) {
-      FechaAMostrar += "Hoy, "+nuevahora;
-    }else if (iniciada && today == false) {
-      FechaAMostrar += "Mañana, "+nuevahora;
-    }else if (iniciada == false && dia == 9) {
-      FechaAMostrar += "Viernes, "+nuevahora;
-    }else if (iniciada == false && dia == 10) {
-      FechaAMostrar += "Sabado, "+nuevahora;
-    }
+      if (iniciada && today == true) {
+        FechaAMostrar += "Hoy, "+nuevahora;
+      }else if (iniciada && today == false) {
+        FechaAMostrar += "Mañana, "+nuevahora;
+      }else if (iniciada == false && dia == 9) {
+        FechaAMostrar += "Viernes, "+nuevahora;
+      }else if (iniciada == false && dia == 10) {
+        FechaAMostrar += "Sabado, "+nuevahora;
+      }
 
-    var horas = nuevahora.split(":")[0];
-    var minutos = nuevahora.split(":")[1].split(" ")[0];
+      var horas = nuevahora.split(":")[0];
+      var minutos = nuevahora.split(":")[1].split(" ")[0];
 
-    if (today) {
-      if (hora <= horas && nowminutos <= minutos) {
-        tf = "Faltan "
-        if (hora < horas) {
-          tf += (horas-hora)+" horas y "+(minutos-nowminutos)+" minutos";
-        }else if(hora == horas){
-          tf += (minutos-nowminutos)+" minutos";
+      if (today) {
+        if (hora <= horas && nowminutos <= minutos) {
+          tf = "Faltan "
+          if (hora < horas) {
+            tf += (horas-hora)+" horas y "+(minutos-nowminutos)+" minutos";
+          }else if(hora == horas){
+            tf += (minutos-nowminutos)+" minutos";
+
+            if ((minutos-nowminutos) <= 20) {
+              if (!actividades[i].notification_sended) {
+                Push.create(actividades[i].name, {
+                    body: "Faltan "+(minutos-nowminutos)+" minutos para que inicie una nueva actividad: "+actividades[i].descripcion,
+                    icon: './images/icono.png',
+                    onClick: function () {
+                        window.focus();
+                        window.location.href="#!actividades"
+                    }
+                });
+                actividades[i].notification_sended = true;
+              }
+            }
+
+          }
+        }
+        if ((hora > horas) || (hora == horas && minutos < nowminutos)) {
+          tf = "Ya empezó/terminó";
         }
       }
-      if ((hora > horas) || (hora == horas && minutos < nowminutos)) {
-        tf = "Ya empezó/terminó";
+
+
+      var newhtml = document.getElementById('plantilla_de_actividad').innerHTML;
+      newhtml = newhtml.replace("_NAME_", actividades[i].name);
+      newhtml = newhtml.replace("_TIME_", FechaAMostrar);
+      if (today) {
+        newhtml = newhtml.replace("_TF_", "<p>"+tf+"</p>");
+      }else {
+        newhtml = newhtml.replace("_TF_", "");
       }
+
+      if (actividades[i].descripcion) {
+        newhtml = newhtml.replace("_DESC_", actividades[i].descripcion);
+      }else {
+        newhtml = newhtml.replace("_DESC_", "");
+      }
+
+      newhtml = newhtml.replace("_UBICACION_", actividades[i].Ubicacion);
+
+      if (actividades[i].link && actividades[i].link != "") {
+        newhtml = newhtml.replace("_LINK_",'<div class="card-action"><a href="'+actividades[i].link+'">Mas info</a></div>');
+      }else {
+        newhtml = newhtml.replace("_LINK_", "");
+      }
+
+
+
+
+
+
+      t_html += newhtml
     }
-
-
-    var newhtml = document.getElementById('plantilla_de_actividad').innerHTML;
-    newhtml = newhtml.replace("_NAME_", actividades[i].name);
-    newhtml = newhtml.replace("_TIME_", FechaAMostrar);
-    if (today) {
-      newhtml = newhtml.replace("_TF_", "<p>"+tf+"</p>");
-    }else {
-      newhtml = newhtml.replace("_TF_", "");
-    }
-
-    if (actividades[i].descripcion) {
-      newhtml = newhtml.replace("_DESC_", actividades[i].descripcion);
-    }else {
-      newhtml = newhtml.replace("_DESC_", "");
-    }
-
-    newhtml = newhtml.replace("_UBICACION_", actividades[i].Ubicacion);
-
-    if (actividades[i].link && actividades[i].link != "") {
-      newhtml = newhtml.replace("_LINK_",'<div class="card-action"><a href="'+actividades[i].link+'">Mas info</a></div>');
-    }else {
-      newhtml = newhtml.replace("_LINK_", "");
-    }
-
-
-
-
-
-
-    t_html += newhtml
   }
+  document.getElementById('actividades_div').innerHTML += t_html;
 }
-document.getElementById('actividades_div').innerHTML += t_html;
+
 </script>
 
 <div class="container">

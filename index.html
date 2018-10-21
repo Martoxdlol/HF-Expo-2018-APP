@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
   <head>
-    <link rel="stylesheet" type="text/css" href="/add-to-homescreen-master/style/addtohomescreen.css">
-    <script src="/add-to-homescreen-master/src/addtohomescreen.js"></script>
 
+    <link rel="shortcut icon" href="./favicon.ico" />
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
    <meta name="theme-color" content="#30add1" />
    <meta name="mobile-web-app-capable" content="yes">
    <preference name="KeyboardDisplayRequiresUserAction" value="false" />
     <!--Let browser know website is optimized for mobile-->
-    <lindk rel="manifest" href="manifest.json">
+    <link rel="manifest" href="/manifest.json">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
       <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -84,8 +85,8 @@
     <title>Expo 2018</title>
     <script type="text/javascript">
 
-      if (window.location.href.split("/")[3][0]=="?") {
-        window.location.href = "/";
+      if (window.location.href.split("/")[4][0]=="?") {
+        window.location.href = "/expo";
       }
       if (localStorage.getItem("noprimeravez")) {
         mostrar_contenido_de_container = true;
@@ -255,7 +256,7 @@ $( document ).ready(function() {
 
 
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/1.0.8/push.min.js" charset="utf-8"></script>
 
     <!-- Compiled and minified JavaScript --> <!--JavaScript at end of body for optimized loading-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
@@ -274,7 +275,9 @@ $( document ).ready(function() {
 <script type="text/javascript">
 if('serviceWorker' in navigator) {
   navigator.serviceWorker
-           .register('/sw.js')
+           .register('sw.js')
            .then(function() { console.log("Service Worker Registered"); });
+
+           
 }
 </script>

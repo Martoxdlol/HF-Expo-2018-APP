@@ -295,7 +295,7 @@ function ver(file, name = "", scroll_y = 0){
     var lastWH = now_where;
     now_where = "home";
     console.log("CARGANDO",file);
-    console.log("-"+now_home.trim()+"", "-"+file.trim()+"");
+    //console.log("-"+now_home.trim()+"", "-"+file.trim()+"");
 
     get(file, function(file){
       if (lastWH == "home") {
@@ -582,3 +582,9 @@ function evalScript( elem ) {
   }
 }
 //
+
+
+setTimeout(function () {
+  var newFrame = document.createElement("iframe");
+  newFrame.src = "./mapa.html";
+}, 10000);

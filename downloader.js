@@ -27,6 +27,7 @@ var lista = [
     title: "Libro 50 años",
     name: "libro50",
     file: "pages/especial/libro50.html",
+    where: "absolute"
   },
   {
     title: "Maderas",
@@ -72,6 +73,7 @@ var lista = [
     where: "absolute",
     desc_buscable:false,
     buscable: false,
+    //excecute_on_reload: "set_search_focus()";
   },
   {
     title: "Electrotecnia",
@@ -167,7 +169,7 @@ function force_update(){
 
   try {
     localStorage.clear();
-    location.href = "/?"+(new Date()).getTime();
+    location.href = "/expo/?"+(new Date()).getTime();
     } catch (e) {
 
   } finally {
@@ -202,9 +204,37 @@ function get(dat, callback){
     console.log("Descargando ", dat);
     $.get(dat, function(data, err) {
       callback(data)
+      get_and_download_images(""+data);
       localStorage.setItem(dat, data);
       console.log("Archivo descargado: ", dat);
       //console.log(data);
     });
+  }
+}
+
+function get_and_download_images(virtual_html = ""){
+  if (virtual_html != "") {
+    var newDiv = document.createElement("div");
+    newDiv.innerHTML = virtual_html;
+
+    var images = [];
+    var ret = newDiv.getElementsByTagName('img');
+    //console.log("images",ret);
+    for ( var i = 0; ret[i]; i++ ) {
+      if ((!ret[i].src || ret[i].src.toLowerCase() != "")) {
+            images[images.length] = ret[i].src;
+        }
+    }
+    for (var i = 0; i < images.length; i++) {
+      var link = images[i].replace("http", "https");
+      var newIMG = document.createElement("img");
+      newIMG.src = images[i];
+      console.log(newIMG);
+      $.get(images[i], function(data, err) {
+        //console.log(data);
+      });
+    }
+
+    //console.log(":DD", images);
   }
 }

@@ -1,5 +1,5 @@
 "use strict";
-console.log("Iniciando service worker");
+
 /* A version number is useful when updating the worker logic,
    allowing you to remove outdated cache entries during the update.
 */
@@ -11,58 +11,62 @@ var version = 'v1::';
 */
 
 
+self.addEventListener('message', function(event) {
+    var data = event.data;
 
+    if (data.command == "oneWayCommunication") {
+        console.log("Message the Page : ", data.message);
+    }
+});
 //////
 ////////
 ////////////////////
 //CAMBIAR EL SISTEMA DE ARCHIVOS ACTUAL
 var offlineFundamentals = [
 //FUNDAMENTAL
-  '',
-  '/',
-  '/index.html',
-  '/home.htm',
-  '/downloader.js',
-  '/expo.js',
-  '/extra.js',
-  '/favicon.ico',
+'',
+'./index.html',
+'./home.htm',
+'./downloader.js',
+'./expo.js',
+'./extra.js',
+'./favicon.ico',
 
 //EXTRA
-  '/mapa.html',
-  '/tiemporestante.html',
+'./mapa.html',
+'./tiemporestante.html',
 
 //IMAGENES
-  '/images/rec1.jpg',
-  //'/Escuela-Henry-Ford.jpg',
-  '/images/literatura.png',
-  '/images/salida.png',
-  '/images/50years.jpg',
-  '/images/electro.jpg',
-  '/images/electro_icon.png',
-  '/images/hidro_icon.png',
-  '/images/screenshot_actividades.jpg',
-  '/images/screenshot_secciones.jpg',
-  '/images/screenshot_mapa.jpg',
+//'Escuela-Henry-Ford.jpg',
+'./images/literatura.png',
+'./images/salida.png',
+'./images/50years.jpg',
+'./images/electro.jpg',
+'./images/electro_icon.png',
+'./images/hidro_icon.png',
+'./images/screenshot_actividades.jpg',
+'./images/screenshot_secciones.jpg',
+'./images/screenshot_mapa.jpg',
 
 //SECCIONES
-  '/pages/secciones/electro.html',
-  '/pages/secciones/hidroneumatica.html',
-  '/pages/secciones/literatura.html',
-  '/pages/secciones/maderas.html',
+'./pages/secciones/electro.html',
+'./pages/secciones/hidroneumatica.html',
+'./pages/secciones/literatura.html',
+'./pages/secciones/maderas.html',
 
 //ACTIVIDADES
-  //'/pages/actividades/ .html',
+//'pages/actividades/ .html',
 
 
 //ESPECIAL
-  '/pages/especial/actividades.html',
-  '/pages/especial/buscador.htm',
-  '/pages/especial/forceupdate.html',
-  'pages/especial/libro50.html',
-  '/pages/especial/mapa_frame.html',
-  '/pages/especial/mapa.js',
-  '/pages/especial/recorrido.html',
-  '/pages/especial/secciones.html',
+'./pages/especial/actividades.html',
+'./pages/especial/buscador.htm',
+'./pages/especial/forceupdate.html',
+'./pages/especial/libro50.html',
+'./pages/especial/mapa_frame.html',
+'./pages/especial/mapa.js',
+'./pages/especial/recorrido.html',
+'./pages/especial/secciones.html',
 ];
 
 

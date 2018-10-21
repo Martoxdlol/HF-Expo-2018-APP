@@ -18,7 +18,7 @@
         <div class="input-field" id="ss">
           <input id="search" type="search" tabindex="-1" required>
           <label class="label-icon" onclick="set_search_focus();" for="search" style="cursor:pointer;"><i class="material-icons" id="search_icon">search</i></label>
-          <i class="material-icons" id="search_close" onclick="document.getElementById('search').value = ''; goback(); document.getElementById('gobackground').style.display = 'none'; setTimeout(function () {document.getElementById('gobackground').style.display = '';}, 400);">close</i>
+          <i class="material-icons" id="search_close" onclick="document.getElementById('search').value = ''; goback(); document.getElementById('gobackground').style.display = 'none'; setTimeout(function () {document.getElementById('gobackground').style.display = ''; autobusqueda();}, 400);">close</i>
          </div>
       </form>
    </div>

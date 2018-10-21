@@ -77,8 +77,14 @@ var marcadores = [
     img_url:"images/hidro_icon.png",
     icon:"marker",
   },
+  {
+    lat_lng:[-34.4444071181474, -58.70063191411556],
+    description:"",
+    link:"maderas",
+    img_url:"images/maderas_icon.png",
+    icon:"marker",
+  },
 ]
-
 
 var markers = []
 
