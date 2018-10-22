@@ -10,7 +10,7 @@
    <meta name="mobile-web-app-capable" content="yes">
    <preference name="KeyboardDisplayRequiresUserAction" value="false" />
     <!--Let browser know website is optimized for mobile-->
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="./manifest.json">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
       <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -250,8 +250,31 @@ $( document ).ready(function() {
 
 
 
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBJk0vFtUtDIXlYIgE8clG5uiQpXZx77sM",
+        authDomain: "expo2018-75240.firebaseapp.com",
+        databaseURL: "https://expo2018-75240.firebaseio.com",
+        projectId: "expo2018-75240",
+        storageBucket: "expo2018-75240.appspot.com",
+        messagingSenderId: "25673434194"
+      };
+      firebase.initializeApp(config);
 
+      var messaging = firebase.messaging();
 
+      firebase.messaging().requestPermission()
+      .then(function(token) {
+       console.log('Recibido permiso.');
+       // En el parámetro "token" tienes el código para poder enviar las notificaciones
+      })
+      .catch(function(err) {
+       console.log('No se ha obtenido permiso', err);
+      });
+
+    </script>
 
 
 
@@ -278,6 +301,6 @@ if('serviceWorker' in navigator) {
            .register('sw.js')
            .then(function() { console.log("Service Worker Registered"); });
 
-           
+
 }
 </script>
