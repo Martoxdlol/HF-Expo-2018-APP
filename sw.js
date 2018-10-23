@@ -45,6 +45,7 @@ var offlineFundamentals = [
 //SECCIONES
 './pages/secciones/electro.html',
 './pages/secciones/hidroneumatica.html',
+'./pages/secciones/laboratorio.html',
 './pages/secciones/literatura.html',
 './pages/secciones/maderas.html',
 

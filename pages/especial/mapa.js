@@ -84,6 +84,13 @@ var marcadores = [
     img_url:"images/maderas_icon.png",
     icon:"marker",
   },
+  {
+    lat_lng:[-34.44434851358496, -58.700745352421535],
+    description:"",
+    link:"laboratorio",
+    img_url:"images/labo_icon.png",
+    icon:"marker",
+  },
 ]
 
 var markers = []

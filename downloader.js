@@ -90,6 +90,13 @@ var lista = [
     descripcion: "(taller) Circuitos hidraulicos y neumáticos. Muestra de termoformado.",
   },
   {
+    title: "Laboratorio",
+    name: "laboratorio",
+    file: "pages/secciones/laboratorio.html",
+    tags: "proyectos de investigacion 4to 1er 1ro primero cuarto",
+    descripcion: "Proyectos de investigación y practicas de física",
+  },
+  {
     title: "Encuesta",
     name: "encuesta",
     file: "pages/especial/encuesta.html",

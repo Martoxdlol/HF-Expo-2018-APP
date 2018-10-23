@@ -395,7 +395,7 @@ function expand(){
   setTimeout(function () {
         window.body.style.overflow = "hidden";
         document.getElementById("content").style.width = "100%";
-
+        //document.getElementById('absolute').style.display = "none";
     }, time_to_move);
 
 }
@@ -404,6 +404,7 @@ function expand(){
 function close_content(){
 
   hide_absolute();
+  //document.getElementById('absolute').style.display = "auto";
   //window.location.href = "#!"
   //SCROLL POS CONETENT
   //document.getElementById("content").style.width = window.body.offsetWidth;
@@ -487,6 +488,7 @@ function show_absolute(animate = false){
     M.AutoInit();
   }, time_to_move);
   document.getElementById("absolute").style.visibility = ""
+  document.getElementById("absolute").style.display = ""
 
   document.getElementById("absolute").style.opacity = 1
   absoluteout = true
@@ -496,6 +498,7 @@ function show_absolute(animate = false){
 function hide_absolute(animate = false){
 
   document.getElementById("absolute").style.visibility = "hidden"
+  document.getElementById("absolute").style.display = "none"
   window.body.style.overflow = "auto";
   document.getElementById("absolute").style.opacity = 0;
   absoluteout = false
