@@ -56,6 +56,7 @@ var offlineFundamentals = [
 './pages/especial/actividades.html',
 './pages/especial/buscador.htm',
 './pages/especial/forceupdate.html',
+'./pages/especial/encuesta.html',
 './pages/especial/libro50.html',
 './pages/especial/mapa_frame.html',
 './pages/especial/mapa.js',

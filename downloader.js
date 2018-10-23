@@ -89,6 +89,14 @@ var lista = [
     tags: "hidroneumatica neumatica hidraulica taller gaudio melón tableros",
     descripcion: "(taller) Circuitos hidraulicos y neumáticos. Muestra de termoformado.",
   },
+  {
+    title: "Encuesta",
+    name: "encuesta",
+    file: "pages/especial/encuesta.html",
+    tags: "encuesta like gusta",
+    descripcion: "Queremos saber que te gustó mas",
+    where: "absolute",
+  },
 ];
 
 

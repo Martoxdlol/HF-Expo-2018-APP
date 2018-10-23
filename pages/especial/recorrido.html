@@ -78,7 +78,7 @@ height: 100%;
 /* Desktop Styles */
 @media only screen and (min-width: 961px) {
   .linea{
-    background-color: #B2D6FF; /* Blue */
+    background-color: #B2D6FF; /* green */
   }
 }
 
@@ -86,22 +86,23 @@ height: 100%;
 <script type="text/javascript">
 
 </script>
-<div class="sec blue" style="height: 100%; margin: 0px;">
+<div class="sec green" style="height: 100%; margin: 0px;">
   <div style="float: right;">
     <a class="btn-flat waves-effect" href="#!home"><b>Saltar</b></a>
   </div>
   <br>
-<div class="slider contenido blue" style="height:100%;">
+<div class="slider contenido green" style="height:100%;">
   <div id="p1" class="infopages" style="display:auto;">
     <div class="container">
       <div class="col s12">
-
-        <div class="row">
-          <div class="col s12">
-            <h2>Bienvendio a la Expo 2018!</h2>
+        <div class="row" style="position:absolute;">
+          <div class="col s12" style="text-align:center;" class="center">
+            <h2 style="z-index:2; width:100%;" class="center"><b class="white-text">¡Bienvenido/a!</b></h2>
             <p></p>
           </div>
         </div>
+        <img src="./images/baner.png" style="margin-top:60px; z-index:-1; width: 100%; " alt="">
+
         <!-- <br>
         <br>
         <big>Esta es la aplicacion oficial de la expo 2018</big> -->
@@ -262,7 +263,7 @@ height: 100%;
 </div>
 <div id="x4" class="xfooter">
   <div class="fbutton">
-    <a class="btn-flat blue darken-1" onclick='function lkl(){if(temporal.ppp == undefined){temporal.ppp = 2; document.getElementById("p1").style.display = "none";  document.getElementById("p2").style.display = ""; try{document.getElementById("x1").style.display = "none";  document.getElementById("x2").style.display = "";}catch (e) {try{document.getElementById("x2").style.display = "";}catch (e) {}} }else{ try{document.getElementById("x"+temporal.ppp).style.display = "none"; document.getElementById("x"+(temporal.ppp+1)).style.display = ""; }catch (e) {try{document.getElementById("x"+(temporal.ppp+1)).style.display = "";}catch (e) {}} document.getElementById("p"+temporal.ppp).style.display = "none"; document.getElementById("p"+(temporal.ppp+1)).style.display = ""; console.log(temporal.ppp); temporal.ppp = temporal.ppp +1; }} lkl()'><b>Siguiente</b></a>
+    <a class="btn-flat green darken-1" onclick='function lkl(){if(temporal.ppp == undefined){temporal.ppp = 2; document.getElementById("p1").style.display = "none";  document.getElementById("p2").style.display = ""; try{document.getElementById("x1").style.display = "none";  document.getElementById("x2").style.display = "";}catch (e) {try{document.getElementById("x2").style.display = "";}catch (e) {}} }else{ try{document.getElementById("x"+temporal.ppp).style.display = "none"; document.getElementById("x"+(temporal.ppp+1)).style.display = ""; }catch (e) {try{document.getElementById("x"+(temporal.ppp+1)).style.display = "";}catch (e) {}} document.getElementById("p"+temporal.ppp).style.display = "none"; document.getElementById("p"+(temporal.ppp+1)).style.display = ""; console.log(temporal.ppp); temporal.ppp = temporal.ppp +1; }} lkl()'><b>Siguiente</b></a>
   </div>
 </div>
 <!-- <div id="" class="xfooter" style="display: none;">
@@ -272,7 +273,7 @@ height: 100%;
 </div> -->
 <div id="x5" class="xfooter" style="display:none;">
   <div class="fbutton">
-    <a class="btn-flat blue darken-1" href="#!home"><b>Empezar!</b></a>
+    <a class="btn-flat green darken-1" href="#!home"><b>Empezar!</b></a>
   </div>
 </div>
 </div>
