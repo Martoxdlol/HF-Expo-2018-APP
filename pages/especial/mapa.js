@@ -91,6 +91,34 @@ var marcadores = [
     img_url:"images/labo_icon.png",
     icon:"marker",
   },
+  {
+    lat_lng:[-34.44449376321085, -58.70057487306184],
+    description:"",
+    link:"termoformado",
+    img_url:"images/termoformado_icon.png",
+    icon:"marker",
+  },
+  {
+    lat_lng:[-34.44447123348139, -58.70039930357473],
+    description:"",
+    link:"cnc",
+    img_url:"images/cnc_icon.png",
+    icon:"marker",
+  },
+  {
+    lat_lng:[-34.4444991855771, -58.700345277702056],
+    description:"",
+    link:"fabricacion_placa_egresados",
+    img_url:"images/placa_icon.png",
+    icon:"marker",
+  },
+  {
+    lat_lng:[-34.44495537418767, -58.70037837732225],
+    description:"",
+    link:"ingles",
+    img_url:"images/teatro_icon.png",
+    icon:"marker",
+  },
 ]
 
 var markers = []

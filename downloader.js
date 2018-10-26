@@ -97,6 +97,42 @@ var lista = [
     descripcion: "Proyectos de investigación y practicas de física",
   },
   {
+    title: "Termoformado",
+    name: "termoformado",
+    file: "pages/secciones/termoformado.html",
+    tags: "Muestra de termoformado termoconformado gaudio melon hidroneumatica",
+    descripcion: "(taller) Muestra de termoformado",
+  },
+  {
+    title: "Proyecto tecnológico",
+    name: "proyectotecnologico",
+    file: "pages/secciones/proyectotecnologico.html",
+    tags: "gaudio melon hidroneumatica proyecto",
+    descripcion: "(taller) Muestra de estructuras en madera balsa",
+  },
+  {
+    title: "Inglés",
+    name: "ingles",
+    file: "pages/secciones/ingles.html",
+    tags: "obras teatro ingles hamlet romeo juliet venice merchant",
+    descripcion: "Obras de teatro",
+    desc_buscable:false,
+  },
+  {
+    title: "CNC",
+    name: "cnc",
+    file: "pages/secciones/cnc.html",
+    tags: "mecanizado torno cnc",
+    descripcion: "Mecanizado con control numérico computarizado CNC – TORNO Y FRESADURA",
+  },
+  {
+    title: "Fabricación de placa de egresados",
+    name: "fabricacion_placa_egresados",
+    file: "pages/secciones/fabricacion_placa_egresados.html",
+    tags: "cnc programa cad placa egresados fabricacion",
+    descripcion: "Fabricación de placa de egresados y programa CNC",
+  },
+  {
     title: "Encuesta",
     name: "encuesta",
     file: "pages/especial/encuesta.html",
@@ -109,30 +145,54 @@ var lista = [
 
 var actividades = [
   {
-    name: "Obra de ingles: Hamlet",
+    name: "Obra de inglés: Hamlet",
     descripcion: "Obra de teatro del drama \"Hamlet\" actuado por los alumnos de segundo año",
     time: "Viernes 13:50", // HORARIO 24hs
     Ubicacion: "Auditorio",
     link: "#!ingles",
   },
   {
-    name: "Obra de ingles: Merchant of Venice",
+    name: "Obra de inglés: Merchant of Venice",
     descripcion: "Obra de teatro del drama \"Hamlet\" actuado por los alumnos de segundo año",
     time: "Viernes 14:50", // HORARIO 24hs
     Ubicacion: "Auditorio",
+    link: "#!ingles",
   },
   {
-    name: "Obra de ingles: Hamlet",
+    name: "Obra de inglés: Hamlet",
     descripcion: "Obra de teatro del drama \"Hamlet\" actuado por los alumnos de segundo año",
     time: "Sabado 13:50", // HORARIO 24hs
     Ubicacion: "Auditorio",
+    link: "#!ingles",
   },
   {
-    name: "Obra de ingles: Merchant of Venice",
+    name: "Obra de inglés: Merchant of Venice",
     descripcion: "Obra de teatro del drama \"Hamlet\" actuado por los alumnos de segundo año",
     time: "Sabado 14:50", // HORARIO 24hs
     Ubicacion: "Auditorio",
-  }
+    link: "#!ingles",
+  },
+  {
+    name: "Muestra de termoformado",
+    descripcion: "",
+    time: "Viernes 16:00", // HORARIO 24hs
+    Ubicacion: "Taller",
+    link: "#!termoformado",
+  },
+  {
+    name: "Muestra de termoformado",
+    descripcion: "",
+    time: "Sabado 14:00", // HORARIO 24hs
+    Ubicacion: "Taller",
+    link: "#!termoformado",
+  },
+  {
+    name: "Muestra de termoformado",
+    descripcion: "",
+    time: "Sabado 16:00", // HORARIO 24hs
+    Ubicacion: "Taller",
+    link: "#!termoformado",
+  },
 ];
 
 var i = 0;

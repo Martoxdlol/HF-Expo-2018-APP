@@ -43,11 +43,15 @@ var offlineFundamentals = [
 './images/screenshot_mapa.jpg',
 
 //SECCIONES
+'./pages/secciones/cnc.html',
 './pages/secciones/electro.html',
+'./pages/secciones/fabricacion_placa_egresados.html',
 './pages/secciones/hidroneumatica.html',
 './pages/secciones/laboratorio.html',
 './pages/secciones/literatura.html',
 './pages/secciones/maderas.html',
+'./pages/secciones/proyectotecnologico.html',
+'./pages/secciones/termoformado.html',
 
 //ACTIVIDADES
 //'pages/actividades/ .html',

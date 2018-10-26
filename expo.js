@@ -297,7 +297,7 @@ function ver(file, name = "", scroll_y = 0){
     console.log("CARGANDO",file);
     //console.log("-"+now_home.trim()+"", "-"+file.trim()+"");
 
-    get(file, function(file){
+    get(file, function(filedata){
       if (lastWH == "home") {
         flash_shadow();
       }
@@ -309,7 +309,7 @@ function ver(file, name = "", scroll_y = 0){
         console.log("NUEVO CONTENIDO:",now_home+"" != file+"");
         if (now_home+"" != file+"") {
           window.scrollTo(0, 0);
-          insertAndExecute("container", file, scroll_y);
+          insertAndExecute("container", filedata, scroll_y);
           ampliar_zona_de_click();
         }
         now_home = file;
@@ -319,17 +319,16 @@ function ver(file, name = "", scroll_y = 0){
 
       lasthome = file;
     });
-
   }else if(getfilewhere(file) && getfilewhere(file) == "absolute"){
     var lastWH = now_where;
     now_where = "absolute";
     console.log("CARGANDO",file);
     console.log( now_absolute+"", file+"");
 
-    get(file, function(file){
+    get(file, function(filedata){
 
       if (now_absolute+"" != file+"") {
-        insertAndExecute("absolute", file+"", scroll_y);
+        insertAndExecute("absolute", filedata+"", scroll_y);
         ampliar_zona_de_click();
       }
       goingback = false;
@@ -347,26 +346,49 @@ function ver(file, name = "", scroll_y = 0){
     now_where = "side";
     console.log("CARGANDO",file);
     console.log( now_side+"", file+"");
-
-    get(file, function(file){
+    var file_name_ = file;
+    get(file, function(filedata){
 
         if (x_last_where == now_where) {
 
+          console.log(x_last_where+"__F",now_where+"__F");
           flash_shadow_side();
-          setTimeout(function () {
-            if (now_side+"" != file+"") {
-              insertAndExecute("content", file, scroll_y);
-              ampliar_zona_de_click();
+
+            if (now_side+"" != file_name_+"") {
+              setTimeout(function () {
+                insertAndExecute("content", filedata, scroll_y);
+                ampliar_zona_de_click();
+                try {
+                  if (scroll_y && scroll_y != 0) {
+                    document.getElementById('side_full_div').scrollTo(0,scroll_y)
+                  }
+                } catch (e) {
+
+                } finally {
+
+                }
+              }, 200);
             }
-          }, 200);
+
         }else {
 
-          if (now_side+"" != file+"") {
-            insertAndExecute("content", file, scroll_y);
+          if (now_side+"" != file_name_+"") {
+            insertAndExecute("content", filedata, scroll_y);
             ampliar_zona_de_click();
+            try {
+              if (scroll_y && scroll_y != 0) {
+                document.getElementById('side_full_div').scrollTo(0,scroll_y)
+              }
+            } catch (e) {
+
+            } finally {
+
+            }
+
+
           }
         }
-        now_side = file;
+        now_side = file_name_;
       goingback = false;
     });
 

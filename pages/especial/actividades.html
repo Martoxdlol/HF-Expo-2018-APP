@@ -23,9 +23,13 @@ setInterval(function () {
   showActs()
 }, 30000);
 
+
+
 function showActs(){
+  var actividados = [];
   var t_html = "";
   for (var i = 0; i < actividades.length; i++) {
+    actividados[i] = {};
     if (actividades[i] && actividades[i].time) {
 
       var nuevahora = "";
@@ -116,38 +120,94 @@ function showActs(){
       }
 
 
+      actividados
+
       var newhtml = document.getElementById('plantilla_de_actividad').innerHTML;
-      newhtml = newhtml.replace("_NAME_", actividades[i].name);
-      newhtml = newhtml.replace("_TIME_", FechaAMostrar);
+      actividados[i].name = actividades[i].name;
+      actividados[i].time = FechaAMostrar;
+
       if (today) {
-        newhtml = newhtml.replace("_TF_", "<p>"+tf+"</p>");
+        actividados[i].tf = "<p>"+tf+"</p>";
       }else {
-        newhtml = newhtml.replace("_TF_", "");
+        actividados[i].tf = "";
       }
 
       if (actividades[i].descripcion) {
-        newhtml = newhtml.replace("_DESC_", actividades[i].descripcion);
+        actividados[i].descripcion = actividades[i].descripcion;
       }else {
-        newhtml = newhtml.replace("_DESC_", "");
+        actividados[i].descripcion = "";
       }
 
       newhtml = newhtml.replace("_UBICACION_", actividades[i].Ubicacion);
+      actividados[i].ubicacion = actividades[i].Ubicacion;
 
       if (actividades[i].link && actividades[i].link != "") {
-        newhtml = newhtml.replace("_LINK_",'<div class="card-action"><a href="'+actividades[i].link+'">Mas info</a></div>');
+        actividados[i].link = '<div class="card-action"><a href="'+actividades[i].link+'">Mas info</a></div>';
+
       }else {
-        newhtml = newhtml.replace("_LINK_", "");
+        actividados[i].link = "";
+      }
+
+      var min2 = minutos+"";
+      var horas2 = horas+"";
+
+      if (min2.length == 1) {
+        min2 = "0"+min2
+      }
+      if (horas2.length == 1) {
+        horas2 = "0"+horas2
+      }
+
+      if (today && dia == 9) {
+        actividados[i].dt = "1"+horas2+min2;
+      }
+      if (today && dia == 10) {
+        actividados[i].dt = "2"+horas2+min2;
+      }
+
+      if (!today && dia == 10) {
+        actividados[i].dt = "4"+horas2+min2;
+      }
+      if (!today && dia == 9) {
+        actividados[i].dt = "3"+horas2+min2;
       }
 
 
+      actividados[i].dt = parseInt(actividados[i].dt);
 
 
 
 
-      t_html += newhtml
     }
   }
-  document.getElementById('actividades_div').innerHTML += t_html;
+
+
+  actividados.sort(function(a, b){return a.dt - b.dt});
+  var changed = false;
+  for (var i = 0; i < actividados.length; i++) {
+
+    var newhtml = document.getElementById('plantilla_de_actividad').innerHTML;
+
+    if (changed == false && actividados[i].dt < 40000 && actividados[i].dt > 29999) {
+      newhtml = '<div class="row">        <div class="col s12">          <b>Otro día:  </b>      </div>  </div>'+newhtml;
+
+      changed = true;
+      //console.log("DDDDDDTTTTTTTT", actividados[i].dt);
+    }
+
+    newhtml = newhtml.replace("_NAME_", actividados[i].name);
+    newhtml = newhtml.replace("_TIME_", actividados[i].time);
+    newhtml = newhtml.replace("_TF_", actividados[i].tf);
+
+    newhtml = newhtml.replace("_DESC_", actividados[i].descripcion);
+
+    newhtml = newhtml.replace("_UBICACION_", actividados[i].ubicacion);
+
+    newhtml = newhtml.replace("_LINK_", actividados[i].link);
+    t_html += newhtml
+
+  }
+  document.getElementById('actividades_div').innerHTML = t_html;
 }
 
 </script>

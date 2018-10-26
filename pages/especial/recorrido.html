@@ -113,10 +113,19 @@ height: 100%;
     <div class="row">
       <div class="col s12 m6">
         <b><p>Con esta aplicación podrás encontrar información de todos los talleres, actividades y muestras de la expo.</p></b>
+        <h6>Tienes información de:</h6>
+        <p>
+
+          <b>Sectores en la expo</b>
+          <br>
+          <b>Actividades y sus horarios</b>
+          <br>
+          <b>Mapa del colegio</b>
+        </p>
       </div>
       <div class="col s12 m6">
         <b><p>
-          <table>
+          <!-- <table>
             <tr>
               <td><i class="material-icons left">info</i></td>
               <td>información de todos los sectores</td>
@@ -141,7 +150,7 @@ height: 100%;
               <td><i class="material-icons left">add</i></td>
               <td>¡Y mucho más!</td>
             </tr>
-          </table>
+          </table> -->
           <br>
           <br>
           <br>
@@ -250,8 +259,17 @@ height: 100%;
 
           <!--  -->
         </div>
-        <div class="col s12 m6">
-
+        <div class="col s12">
+          <div class="row">
+            <div class="card white hoverable" onclick="window.location.href='#!home'">
+              <br>
+              <h1>&nbsp;EMPEZAR!</h1>
+              <br>
+            </div>
+          </div>
+          <br>
+          <br>
+          <br>
         </div>
       </div>
     </div>
@@ -263,7 +281,9 @@ height: 100%;
 </div>
 <div id="x4" class="xfooter">
   <div class="fbutton">
-    <a class="btn-flat green darken-1" onclick='function lkl(){if(temporal.ppp == undefined){temporal.ppp = 2; document.getElementById("p1").style.display = "none";  document.getElementById("p2").style.display = ""; try{document.getElementById("x1").style.display = "none";  document.getElementById("x2").style.display = "";}catch (e) {try{document.getElementById("x2").style.display = "";}catch (e) {}} }else{ try{document.getElementById("x"+temporal.ppp).style.display = "none"; document.getElementById("x"+(temporal.ppp+1)).style.display = ""; }catch (e) {try{document.getElementById("x"+(temporal.ppp+1)).style.display = "";}catch (e) {}} document.getElementById("p"+temporal.ppp).style.display = "none"; document.getElementById("p"+(temporal.ppp+1)).style.display = ""; console.log(temporal.ppp); temporal.ppp = temporal.ppp +1; }} lkl()'><b>Siguiente</b></a>
+    <div style="padding:0px" class="z-depth-5">
+      <a class="btn-flat z-depth-5 white" onclick='function lkl(){if(temporal.ppp == undefined){temporal.ppp = 2; document.getElementById("p1").style.display = "none";  document.getElementById("p2").style.display = ""; try{document.getElementById("x1").style.display = "none";  document.getElementById("x2").style.display = "";}catch (e) {try{document.getElementById("x2").style.display = "";}catch (e) {}} }else{ try{document.getElementById("x"+temporal.ppp).style.display = "none"; document.getElementById("x"+(temporal.ppp+1)).style.display = ""; }catch (e) {try{document.getElementById("x"+(temporal.ppp+1)).style.display = "";}catch (e) {}} document.getElementById("p"+temporal.ppp).style.display = "none"; document.getElementById("p"+(temporal.ppp+1)).style.display = ""; console.log(temporal.ppp); temporal.ppp = temporal.ppp +1; }} lkl()'><b>Siguiente</b></a>
+    </div>
   </div>
 </div>
 <!-- <div id="" class="xfooter" style="display: none;">
