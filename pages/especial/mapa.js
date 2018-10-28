@@ -10,15 +10,8 @@ var marcadores = [
   {
     lat_lng:[-34.444685917557216 , -58.70095816615408],
     description:"Entrada principal",
-    link:"!!Aula 6",
-    img_url:"images/aula.png",
-    icon:"marker",
-  },
-  {
-    lat_lng:[-34.444685917557216, -58.70095816615408],
-    description:"Entrada principal",
-    link:"!!Aula de inglés",
-    img_url:"images/aula.png",
+    link:"arte",
+    img_url:"images/arte_icon.png",
     icon:"marker",
   },
   {

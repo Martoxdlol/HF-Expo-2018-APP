@@ -43,6 +43,7 @@ var offlineFundamentals = [
 './images/screenshot_mapa.jpg',
 
 //SECCIONES
+'./pages/secciones/arte.html',
 './pages/secciones/cnc.html',
 './pages/secciones/electro.html',
 './pages/secciones/fabricacion_placa_egresados.html',

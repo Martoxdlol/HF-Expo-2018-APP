@@ -133,6 +133,13 @@ var lista = [
     descripcion: "Fabricación de placa de egresados y programa CNC",
   },
   {
+    title: "Artistica",
+    name: "arte",
+    file: "pages/secciones/arte.html",
+    tags: "arte plastica artistica stop motion",
+    descripcion: "Taller de artistica",
+  },
+  {
     title: "Encuesta",
     name: "encuesta",
     file: "pages/especial/encuesta.html",
@@ -192,6 +199,34 @@ var actividades = [
     time: "Sabado 16:00", // HORARIO 24hs
     Ubicacion: "Taller",
     link: "#!termoformado",
+  },
+  {
+    name: "Videos de stop motion",
+    descripcion: "",
+    time: "Sabado 10:00", // HORARIO 24hs
+    Ubicacion: "Aula 6",
+    link: "#!arte",
+  },
+  {
+    name: "Videos de stop motion",
+    descripcion: "",
+    time: "Sabado 14:00", // HORARIO 24hs
+    Ubicacion: "Aula 6",
+    link: "#!arte",
+  },
+  {
+    name: "Videos de stop motion",
+    descripcion: "",
+    time: "Viernes 10:00", // HORARIO 24hs
+    Ubicacion: "Aula 6",
+    link: "#!arte",
+  },
+  {
+    name: "Videos de stop motion",
+    descripcion: "",
+    time: "Viernes 14:00", // HORARIO 24hs
+    Ubicacion: "Aula 6",
+    link: "#!arte",
   },
 ];
 
