@@ -356,7 +356,11 @@ function ver(file, name = "", scroll_y = 0){
 
             if (now_side+"" != file_name_+"") {
               setTimeout(function () {
+
+                console.log("NUEVO CONTENIDO EN: SIDE");
+                insertAndExecute("content", "", 0);
                 insertAndExecute("content", filedata, scroll_y);
+                console.log("SCROLLING to ", scroll_y);
                 ampliar_zona_de_click();
                 try {
                   if (scroll_y && scroll_y != 0) {
@@ -373,7 +377,10 @@ function ver(file, name = "", scroll_y = 0){
         }else {
 
           if (now_side+"" != file_name_+"") {
+            console.log("NUEVO CONTENIDO EN: SIDE");
+            insertAndExecute("content", "", 0);
             insertAndExecute("content", filedata, scroll_y);
+            console.log("SCROLLING to ", scroll_y);
             ampliar_zona_de_click();
             try {
               if (scroll_y && scroll_y != 0) {
@@ -534,7 +541,13 @@ function insertAndExecute(id, text, scroll_y){
   //window.scrollTo(0, 0);
   if (scroll_y) {
     if (scroll_y >= 0) {
-      window.scrollTo(0, scroll_y)
+
+      if (id == "home") {
+        window.scrollTo(0, scroll_y)
+      }
+      if (id == "content") {
+        document.getElementById('side_full_div').scrollTo(0, scroll_y);
+      }
     }
 
   }

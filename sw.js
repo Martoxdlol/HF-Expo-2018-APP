@@ -47,6 +47,7 @@ var offlineFundamentals = [
 './pages/secciones/cnc.html',
 './pages/secciones/electro.html',
 './pages/secciones/fabricacion_placa_egresados.html',
+'./pages/secciones/geografia.html',
 './pages/secciones/hidroneumatica.html',
 './pages/secciones/laboratorio.html',
 './pages/secciones/literatura.html',

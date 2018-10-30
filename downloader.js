@@ -140,6 +140,13 @@ var lista = [
     descripcion: "Taller de artistica",
   },
   {
+    title: "Geografía",
+    name: "geografia",
+    file: "pages/secciones/geografia.html",
+    tags: "planta automotriz industria geografia",
+    descripcion: "Proyectos de 5to año (viaje a Entre Rios) y 4to año (viaje a Puerto Madryn)",
+  },
+  {
     title: "Encuesta",
     name: "encuesta",
     file: "pages/especial/encuesta.html",

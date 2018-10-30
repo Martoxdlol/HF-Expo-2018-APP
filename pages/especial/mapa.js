@@ -17,8 +17,8 @@ var marcadores = [
   {
     lat_lng:[-34.44474001905654, -58.70086020365973],
     description:"Entrada principal",
-    link:"!!Aula 5",
-    img_url:"images/aula.png",
+    link:"geografia",
+    img_url:"images/geo_icon.png",
     icon:"marker",
   },
   {
