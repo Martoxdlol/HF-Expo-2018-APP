@@ -281,7 +281,9 @@ window.onhashchange = function(e) {
 
 
 function ver(file, name = "", scroll_y = 0){
-
+  setTimeout(function () {
+    ampliar_zona_de_click();
+  }, 500);
   var title = getfiletitle(file);
   insertAndExecute("logo", title, -1)
   var content = document.getElementById("content");

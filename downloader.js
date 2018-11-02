@@ -160,32 +160,57 @@ var lista = [
 var actividades = [
   {
     name: "Obra de inglés: Hamlet",
-    descripcion: "Obra de teatro del drama \"Hamlet\" actuado por los alumnos de segundo año",
-    time: "Viernes 13:50", // HORARIO 24hs
+    descripcion: "Obra de teatro \"Hamlet\" representada por los alumnos de 2º año. Duración: 20 min",
+    time: "Viernes 10:00", // HORARIO 24hs
     Ubicacion: "Auditorio",
     link: "#!ingles",
   },
-  {
-    name: "Obra de inglés: Merchant of Venice",
-    descripcion: "Obra de teatro del drama \"Hamlet\" actuado por los alumnos de segundo año",
-    time: "Viernes 14:50", // HORARIO 24hs
-    Ubicacion: "Auditorio",
-    link: "#!ingles",
-  },
+
   {
     name: "Obra de inglés: Hamlet",
-    descripcion: "Obra de teatro del drama \"Hamlet\" actuado por los alumnos de segundo año",
-    time: "Sabado 13:50", // HORARIO 24hs
+    descripcion: "Obra de teatro \"Hamlet\" representada por los alumnos de 2º año. Duración: 20 min",
+    time: "Sabado 14:00", // HORARIO 24hs
     Ubicacion: "Auditorio",
     link: "#!ingles",
   },
+
+
+
+  {
+    name: "Obra de inglés: Romeo and Juliet",
+    descripcion: "Obra de teatro \"Romeo and Juliet\" representada por los alumnos de 3º año. Duración: 20 min",
+    time: "Viernes 12:00", // HORARIO 24hs
+    Ubicacion: "Auditorio",
+    link: "#!ingles",
+  },
+
+  {
+    name: "Obra de inglés: Romeo and Juliet",
+    descripcion: "Obra de teatro \"Romeo and Juliet\" representada por los alumnos de 3º año. Duración: 20 min",
+    time: "Sabado 12:00", // HORARIO 24hs
+    Ubicacion: "Auditorio",
+    link: "#!ingles",
+  },
+
+
   {
     name: "Obra de inglés: Merchant of Venice",
-    descripcion: "Obra de teatro del drama \"Hamlet\" actuado por los alumnos de segundo año",
-    time: "Sabado 14:50", // HORARIO 24hs
+    descripcion: "Obra de teatro \"Merchant of Venice\" representada por los alumnos de 4º año. Duración: 20 min",
+    time: "Viernes 14:00", // HORARIO 24hs
     Ubicacion: "Auditorio",
     link: "#!ingles",
   },
+
+  {
+    name: "Obra de inglés: Merchant of Venice",
+    descripcion: "Obra de teatro \"Merchant of Venice\" representada por los alumnos de 4º año. Duración: 20 min",
+    time: "Sabado 15:00", // HORARIO 24hs
+    Ubicacion: "Auditorio",
+    link: "#!ingles",
+  },
+
+
+
   {
     name: "Muestra de termoformado",
     descripcion: "",
