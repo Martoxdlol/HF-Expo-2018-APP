@@ -168,7 +168,24 @@ var marcadores = [
     img_url:"images/plc_icon.png",
     icon:"marker",
   },
+  {
+    lat_lng:[-34.444549914357346, -58.70040322006382],
+    description:"",
+    link:"!!Metales",
+    img_url:"images/metales_icon.png",
+    icon:"marker",
+  },
+
+  {
+    lat_lng:[-34.44450277308208, -58.700522709221346],
+    description:"",
+    link:"!!Torneria",
+    img_url:"images/torneria_icon.png",
+    icon:"marker",
+  },
 ]
+
+
 
 var markers = []
 

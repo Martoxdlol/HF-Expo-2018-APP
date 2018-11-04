@@ -197,6 +197,14 @@ var lista = [
     descripcion: "Queremos saber que te gustó mas",
     where: "absolute",
   },
+
+  {
+    title: "Creditos",
+    name: "creditos",
+    file: "pages/especial/creditos.html",
+    tags: "Creditos contacto creadores programador",
+    descripcion: "Creador",
+  },
 ];
 
 
