@@ -35,7 +35,6 @@ var lista = [
     file: "pages/secciones/maderas.html",
     tags: "pepe popo lolamentox2 carpinteria",
     descripcion: "Taller de carpinteria",
-    alumnos: "Tomas Cichero. Juan Carlos" //SE SEPARAN LOS NOMBRES POR PUTOS
   },
   {
     title: "Mapa",
@@ -147,6 +146,50 @@ var lista = [
     descripcion: "Proyectos de 5to año (viaje a Entre Rios) y 4to año (viaje a Puerto Madryn)",
   },
   {
+    title: "Robótica",
+    name: "robotica",
+    file: "pages/secciones/robotica.html",
+    tags: "LEGO robotica taller laboratorio",
+    descripcion: "Se ven distintos trabajos prácticos con robots construidos con LEGO que realizan los alumnos de 1° y 2° año.",
+  },
+  {
+    title: "Electrónica",
+    name: "electronica",
+    file: "pages/secciones/electronica.html",
+    tags: "arduino MICROCONTROLADORES plaquetas circuitos impresos lanfranco taller",
+    descripcion: "Creación de circuitos impresos, uso de microcontroladores Arduino para automatizar tareas",
+  },
+
+  {
+    title: "“Rock & Ford”",
+    name: "rock_and_ford",
+    file: "pages/secciones/rockandford.html",
+    tags: "musica rock and ford santi gliosca",
+    descripcion: "Música en vivo: “Rock & Ford”",
+  },
+
+  {
+    title: "FordKlore",
+    name: "folklore",
+    file: "pages/secciones/folklore.html",
+    tags: "25 mayo folklore balsamo rosana boglioli",
+    descripcion: "Taller de danzas argentinas Fordklore",
+    alumnos: "Maximo Boglioli. Clarisa Pereira. Felipe" //SE SEPARAN LOS NOMBRES POR PUNTOS
+  },
+
+
+  {
+    title: "Fundición",
+    name: "fundicion",
+    file: "pages/secciones/fundicion.html",
+    tags: "fundición colada 750 ºC",
+    descripcion: "Fundición de aluminio a 750ºC",
+  },
+
+
+
+
+  {
     title: "Encuesta",
     name: "encuesta",
     file: "pages/especial/encuesta.html",
@@ -179,7 +222,7 @@ var actividades = [
   {
     name: "Obra de inglés: Romeo and Juliet",
     descripcion: "Obra de teatro \"Romeo and Juliet\" representada por los alumnos de 3º año. Duración: 20 min",
-    time: "Viernes 12:00", // HORARIO 24hs
+    time: "Viernes 12:30", // HORARIO 24hs
     Ubicacion: "Auditorio",
     link: "#!ingles",
   },
@@ -204,7 +247,7 @@ var actividades = [
   {
     name: "Obra de inglés: Merchant of Venice",
     descripcion: "Obra de teatro \"Merchant of Venice\" representada por los alumnos de 4º año. Duración: 20 min",
-    time: "Sabado 15:00", // HORARIO 24hs
+    time: "Sabado 15:30", // HORARIO 24hs
     Ubicacion: "Auditorio",
     link: "#!ingles",
   },
@@ -259,6 +302,69 @@ var actividades = [
     time: "Viernes 14:00", // HORARIO 24hs
     Ubicacion: "Aula 6",
     link: "#!arte",
+  },
+
+  {
+    name: "Documetal viaje a Purmamarca",
+    descripcion: "",
+    time: "Viernes 12:00", // HORARIO 24hs
+    Ubicacion: "Aula 6",
+    // link: "#!arte",
+  },
+
+  {
+    name: "Documetal viaje a Purmamarca",
+    descripcion: "",
+    time: "Sabado 12:00", // HORARIO 24hs
+    Ubicacion: "Aula 6",
+    // link: "#!arte",
+  },
+/////////////////////////////////////
+{
+  name: "Documetal viaje a Purmamarca",
+  descripcion: "",
+  time: "Viernes 16:00", // HORARIO 24hs
+  Ubicacion: "Aula 6",
+  // link: "#!arte",
+},
+
+{
+  name: "Documetal viaje a Purmamarca",
+  descripcion: "",
+  time: "Sabado 16:00", // HORARIO 24hs
+  Ubicacion: "Aula 6",
+  // link: "#!arte",
+},
+
+
+
+  {
+    name: "“Rock & Ford”",
+    descripcion: "Música en vivo: “Rock & Ford”",
+    time: "Viernes 11:30", // HORARIO 24hs
+    Ubicacion: "Auditorio",
+    link: "#!rock_and_ford",
+  },
+  {
+    name: "“Rock & Ford”",
+    descripcion: "Música en vivo: “Rock & Ford”",
+    time: "Viernes 16:30", // HORARIO 24hs
+    Ubicacion: "Auditorio",
+    link: "#!rock_and_ford",
+  },
+  {
+    name: "“Rock & Ford”",
+    descripcion: "Música en vivo: “Rock & Ford”",
+    time: "Sabado 11:30", // HORARIO 24hs
+    Ubicacion: "Auditorio",
+    link: "#!rock_and_ford",
+  },
+  {
+    name: "“Rock & Ford”",
+    descripcion: "Música en vivo: “Rock & Ford”",
+    time: "Sabado 16:30", // HORARIO 24hs
+    Ubicacion: "Auditorio",
+    link: "#!rock_and_ford",
   },
 ];
 

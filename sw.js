@@ -53,6 +53,7 @@ var offlineFundamentals = [
 './pages/secciones/literatura.html',
 './pages/secciones/maderas.html',
 './pages/secciones/proyectotecnologico.html',
+'./pages/secciones/robotica.html',
 './pages/secciones/termoformado.html',
 
 //ACTIVIDADES
