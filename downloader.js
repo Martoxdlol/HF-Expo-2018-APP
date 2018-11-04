@@ -220,6 +220,38 @@ var lista = [
   },
 
   {
+    title: "Metales",
+    name: "metales",
+    file: "pages/secciones/metales.html",
+    tags: "metales kawa juan martin Juan Martín Kiahiayan", // YO KE SE
+    descripcion: "Trabajos en metal por alumnos de 1º, 2º y 3º",
+  },
+
+  {
+    title: "Soldadura",
+    name: "soldadura",
+    file: "pages/secciones/soldadura.html",
+    tags: "metales kawa juan martin soldadura ", // YO KE SE
+    descripcion: "Se muestran los trabajos de los alumnos en el proceso de construcción de un invernadero",
+  },
+
+  {
+    title: "Automatización con PLC",
+    name: "plc",
+    file: "pages/secciones/plc.html",
+    tags: "automatizacion plc  ", // YO KE SE
+    descripcion: "Se muestran los trabajos de los alumnos en el proceso de construcción de un invernadero",
+  },
+
+  {
+    title: "Energías renovables",
+    name: "energias_renovables",
+    file: "pages/secciones/energias_renovables.html",
+    tags: "energías renovables juan martin generador viento molino", // YO KE SE
+    descripcion: "Se muestra y se explica el proyecto de construcción y ensayo de un generador eléctrico construido completamente por los alumnos",
+  },
+
+  {
     title: "Creditos",
     name: "creditos",
     file: "pages/especial/creditos.html",

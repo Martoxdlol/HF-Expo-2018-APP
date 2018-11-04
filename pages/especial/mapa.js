@@ -164,14 +164,14 @@ var marcadores = [
   {
     lat_lng:[-34.44438273318959, -58.70083757973805],
     description:"",
-    link:"!!PLC, AUTOMATIZACION INDUSTRIAL: SIMULACIÓN A ESCALA DE UN PROCESO INDUSTRIAL AUTOMATIZADO, CONTROLADO A TRAVÉS DE PLC, SENSORES, PULSADORES, FINALES DE CARRERA, ELECTROVALVULAS, ETC... CON INTERFACE A UNA PC.",
+    link:"plc",
     img_url:"images/plc_icon.png",
     icon:"marker",
   },
   {
     lat_lng:[-34.444549914357346, -58.70040322006382],
     description:"",
-    link:"!!Metales",
+    link:"metales",
     img_url:"images/metales_icon.png",
     icon:"marker",
   },
@@ -183,8 +183,14 @@ var marcadores = [
     img_url:"images/torneria_icon.png",
     icon:"marker",
   },
+  {
+    lat_lng:[-34.44463118371418, -58.70044147473109],
+    description:"",
+    link:"consolas_retro",
+    img_url:"images/console_icon.png",
+    icon:"marker",
+  },
 ]
-
 
 
 var markers = []

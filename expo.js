@@ -361,9 +361,11 @@ function ver(file, name = "", scroll_y = 0){
 
                 console.log("NUEVO CONTENIDO EN: SIDE");
                 insertAndExecute("content", "", 0);
+                document.getElementById('side_full_div').scrollTo(0,0)
                 insertAndExecute("content", filedata, scroll_y);
                 console.log("SCROLLING to ", scroll_y);
                 ampliar_zona_de_click();
+
                 try {
                   if (scroll_y && scroll_y != 0) {
                     document.getElementById('side_full_div').scrollTo(0,scroll_y)
@@ -381,9 +383,11 @@ function ver(file, name = "", scroll_y = 0){
           if (now_side+"" != file_name_+"") {
             console.log("NUEVO CONTENIDO EN: SIDE");
             insertAndExecute("content", "", 0);
+            document.getElementById('side_full_div').scrollTo(0,0)
             insertAndExecute("content", filedata, scroll_y);
             console.log("SCROLLING to ", scroll_y);
             ampliar_zona_de_click();
+
             try {
               if (scroll_y && scroll_y != 0) {
                 document.getElementById('side_full_div').scrollTo(0,scroll_y)
