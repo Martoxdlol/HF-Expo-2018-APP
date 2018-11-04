@@ -125,7 +125,7 @@ var lista = [
     descripcion: "Mecanizado con control numérico computarizado CNC – TORNO Y FRESADURA",
   },
   {
-    title: "Fabricación de placa de egresados",
+    title: "Placa de egresados",
     name: "fabricacion_placa_egresados",
     file: "pages/secciones/fabricacion_placa_egresados.html",
     tags: "cnc programa cad placa egresados fabricacion",
@@ -186,8 +186,29 @@ var lista = [
     descripcion: "Fundición de aluminio a 750ºC",
   },
 
+  {
+    title: "Consolas retro",//Creación de consolas de Video juegos Retro
+    name: "consolas_retro",
+    file: "pages/secciones/consolas_retro.html",
+    tags: "raspberry pi retro",
+    descripcion: "Creación de consolas de Video juegos Retro",
+  },
 
+  {
+    title: "Vehículo de estudio",
+    name: "motores",
+    file: "pages/secciones/motores.html",
+    tags: "motres ford diagnostico",
+    descripcion: "Presentación de vehículo de estudio, encendido de motor Ford Puma 2.2",
+  },
 
+  {
+    title: "Manufactura aditiva",
+    name: "impresion_3d",
+    file: "pages/secciones/impresion_3d.html",
+    tags: "impresora 3d",
+    descripcion: "Impresión 3D de piezas",
+  },
 
   {
     title: "Encuesta",

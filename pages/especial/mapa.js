@@ -143,7 +143,7 @@ var marcadores = [
   {
     lat_lng:[-34.444470280496574, -58.70075900230411],
     description:"",
-    link:"!!Motores",
+    link:"motores",
     img_url:"images/motores_icon.png",
     icon:"marker",
   },
