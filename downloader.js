@@ -244,7 +244,7 @@ var lista = [
   },
 
   {
-    title: "Energías renovables",
+    title: "Renovables",
     name: "energias_renovables",
     file: "pages/secciones/energias_renovables.html",
     tags: "energías renovables juan martin generador viento molino", // YO KE SE
@@ -257,6 +257,13 @@ var lista = [
     file: "pages/especial/creditos.html",
     tags: "Creditos contacto creadores programador",
     descripcion: "Creador",
+  },
+  {
+    title: "Información",
+    name: "info",
+    file: "pages/especial/info.html",
+    tags: "Informacion sobre creacion app",
+    descripcion: "Informacion sobre la creación de la aplicación",
   },
 ];
 
