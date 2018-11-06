@@ -236,7 +236,7 @@ var lista = [
   },
 
   {
-    title: "Automatización con PLC",
+    title: "Automatización",
     name: "plc",
     file: "pages/secciones/plc.html",
     tags: "automatizacion plc  ", // YO KE SE
