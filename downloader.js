@@ -103,7 +103,7 @@ var lista = [
     descripcion: "(taller) Muestra de termoformado",
   },
   {
-    title: "Proyecto tecnológico",
+    title: "P. tecnológico",
     name: "proyectotecnologico",
     file: "pages/secciones/proyectotecnologico.html",
     tags: "gaudio melon hidroneumatica proyecto",
@@ -195,7 +195,7 @@ var lista = [
   },
 
   {
-    title: "Vehículo de estudio",
+    title: "Vehículo",
     name: "motores",
     file: "pages/secciones/motores.html",
     tags: "motres ford diagnostico",
@@ -203,7 +203,7 @@ var lista = [
   },
 
   {
-    title: "Manufactura aditiva",
+    title: "Manufac. aditiva",
     name: "impresion_3d",
     file: "pages/secciones/impresion_3d.html",
     tags: "impresora 3d",
