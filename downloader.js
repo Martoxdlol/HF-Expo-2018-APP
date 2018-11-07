@@ -280,7 +280,7 @@ var actividades = [
   {
     name: "Obra de inglés: Hamlet",
     descripcion: "Obra de teatro \"Hamlet\" representada por los alumnos de 2º año. Duración: 20 min",
-    time: "Sabado 14:00", // HORARIO 24hs
+    time: "Sabado 13:00", // HORARIO 24hs
     Ubicacion: "Auditorio",
     link: "#!ingles",
   },
@@ -298,7 +298,7 @@ var actividades = [
   {
     name: "Obra de inglés: Romeo and Juliet",
     descripcion: "Obra de teatro \"Romeo and Juliet\" representada por los alumnos de 3º año. Duración: 20 min",
-    time: "Sabado 12:00", // HORARIO 24hs
+    time: "Sabado 11:00", // HORARIO 24hs
     Ubicacion: "Auditorio",
     link: "#!ingles",
   },
@@ -315,7 +315,7 @@ var actividades = [
   {
     name: "Obra de inglés: Merchant of Venice",
     descripcion: "Obra de teatro \"Merchant of Venice\" representada por los alumnos de 4º año. Duración: 20 min",
-    time: "Sabado 15:30", // HORARIO 24hs
+    time: "Sabado 14:30", // HORARIO 24hs
     Ubicacion: "Auditorio",
     link: "#!ingles",
   },
@@ -332,28 +332,28 @@ var actividades = [
   {
     name: "Muestra de termoformado",
     descripcion: "",
-    time: "Sabado 14:00", // HORARIO 24hs
+    time: "Sabado 13:00", // HORARIO 24hs
     Ubicacion: "Taller",
     link: "#!termoformado",
   },
   {
     name: "Muestra de termoformado",
     descripcion: "",
-    time: "Sabado 16:00", // HORARIO 24hs
+    time: "Sabado 15:00", // HORARIO 24hs
     Ubicacion: "Taller",
     link: "#!termoformado",
   },
   {
     name: "Videos de stop motion",
     descripcion: "",
-    time: "Sabado 10:00", // HORARIO 24hs
+    time: "Sabado 9:00", // HORARIO 24hs
     Ubicacion: "Aula 6",
     link: "#!arte",
   },
   {
     name: "Videos de stop motion",
     descripcion: "",
-    time: "Sabado 14:00", // HORARIO 24hs
+    time: "Sabado 13:00", // HORARIO 24hs
     Ubicacion: "Aula 6",
     link: "#!arte",
   },
@@ -383,7 +383,7 @@ var actividades = [
   {
     name: "Documetal viaje a Purmamarca",
     descripcion: "",
-    time: "Sabado 12:00", // HORARIO 24hs
+    time: "Sabado 11:00", // HORARIO 24hs
     Ubicacion: "Aula 6",
     // link: "#!arte",
   },
@@ -399,7 +399,7 @@ var actividades = [
 {
   name: "Documetal viaje a Purmamarca",
   descripcion: "",
-  time: "Sabado 16:00", // HORARIO 24hs
+  time: "Sabado 15:00", // HORARIO 24hs
   Ubicacion: "Aula 6",
   // link: "#!arte",
 },
@@ -423,14 +423,14 @@ var actividades = [
   {
     name: "“Rock & Ford”",
     descripcion: "Música en vivo: “Rock & Ford”",
-    time: "Sabado 11:30", // HORARIO 24hs
+    time: "Sabado 10:30", // HORARIO 24hs
     Ubicacion: "Auditorio",
     link: "#!rock_and_ford",
   },
   {
     name: "“Rock & Ford”",
     descripcion: "Música en vivo: “Rock & Ford”",
-    time: "Sabado 16:30", // HORARIO 24hs
+    time: "Sabado 15:30", // HORARIO 24hs
     Ubicacion: "Auditorio",
     link: "#!rock_and_ford",
   },
