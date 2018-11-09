@@ -286,7 +286,7 @@ var actividades = [
   {
     name: "Obra de inglés: Hamlet",
     descripcion: "Obra de teatro \"Hamlet\" representada por los alumnos de 2º año. Duración: 20 min",
-    time: "Viernes 10:00", // HORARIO 24hs
+    time: "Viernes 10:30", // HORARIO 24hs
     Ubicacion: "Auditorio",
     link: "#!ingles",
   },
@@ -294,7 +294,7 @@ var actividades = [
   {
     name: "Obra de inglés: Hamlet",
     descripcion: "Obra de teatro \"Hamlet\" representada por los alumnos de 2º año. Duración: 20 min",
-    time: "Sabado 13:00", // HORARIO 24hs
+    time: "Sabado 13:30", // HORARIO 24hs
     Ubicacion: "Auditorio",
     link: "#!ingles",
   },
@@ -304,37 +304,93 @@ var actividades = [
   {
     name: "Obra de inglés: Romeo and Juliet",
     descripcion: "Obra de teatro \"Romeo and Juliet\" representada por los alumnos de 3º año. Duración: 20 min",
+    time: "Viernes 13:00", // HORARIO 24hs
+    Ubicacion: "Auditorio",
+    link: "#!ingles",
+  },
+
+  {
+    name: "Obra de inglés: Romeo and Juliet",
+    descripcion: "Obra de teatro \"Romeo and Juliet\" representada por los alumnos de 3º año. Duración: 20 min",
+    time: "Sabado 11:30", // HORARIO 24hs
+    Ubicacion: "Auditorio",
+    link: "#!ingles",
+  },
+
+
+  {
+    name: "Obra de inglés: Merchant of Venice",
+    descripcion: "Obra de teatro \"Merchant of Venice\" representada por los alumnos de 4º año. Duración: 20 min",
+    time: "Viernes 14:30", // HORARIO 24hs
+    Ubicacion: "Auditorio",
+    link: "#!ingles",
+  },
+
+  {
+    name: "Obra de inglés: Merchant of Venice",
+    descripcion: "Obra de teatro \"Merchant of Venice\" representada por los alumnos de 4º año. Duración: 20 min",
+    time: "Sabado 14:45", // HORARIO 24hs
+    Ubicacion: "Auditorio",
+    link: "#!ingles",
+  },
+
+  {
+    name: "Fundición",
+    descripcion: "",
+    time: "Viernes 15:00", // HORARIO 24hs
+    Ubicacion: "Taller",
+    link: "#!fundicion",
+  },
+  {
+    name: "Fundición",
+    descripcion: "",
+    time: "Viernes 16:15", // HORARIO 24hs
+    Ubicacion: "Taller",
+    link: "#!fundicion",
+  },
+  {
+    name: "Fundición",
+    descripcion: "",
+    time: "Sabado 12:00", // HORARIO 24hs
+    Ubicacion: "Taller",
+    link: "#!fundicion",
+  },
+  {
+    name: "Fundición",
+    descripcion: "",
+    time: "Sabado 14:00", // HORARIO 24hs
+    Ubicacion: "Taller",
+    link: "#!fundicion",
+  },
+  {
+    name: "Fundición",
+    descripcion: "",
+    time: "Sabado 15:15", // HORARIO 24hs
+    Ubicacion: "Taller",
+    link: "#!fundicion",
+  },
+
+  {
+    name: "Partido de handball",
+    descripcion: "",
+    time: "Viernes 10:30", // HORARIO 24hs
+    Ubicacion: "Afuera, atrás de la escuela",
+    link: "#!handball",
+  },
+  {
+    name: "Partido de handball",
+    descripcion: "",
     time: "Viernes 12:30", // HORARIO 24hs
-    Ubicacion: "Auditorio",
-    link: "#!ingles",
+    Ubicacion: "Afuera, atrás de la escuela",
+    link: "#!handball",
   },
-
   {
-    name: "Obra de inglés: Romeo and Juliet",
-    descripcion: "Obra de teatro \"Romeo and Juliet\" representada por los alumnos de 3º año. Duración: 20 min",
-    time: "Sabado 11:00", // HORARIO 24hs
-    Ubicacion: "Auditorio",
-    link: "#!ingles",
+    name: "Partido de handball",
+    descripcion: "",
+    time: "Viernes 14:30", // HORARIO 24hs
+    Ubicacion: "Afuera, atrás de la escuela",
+    link: "#!handball",
   },
-
-
-  {
-    name: "Obra de inglés: Merchant of Venice",
-    descripcion: "Obra de teatro \"Merchant of Venice\" representada por los alumnos de 4º año. Duración: 20 min",
-    time: "Viernes 14:00", // HORARIO 24hs
-    Ubicacion: "Auditorio",
-    link: "#!ingles",
-  },
-
-  {
-    name: "Obra de inglés: Merchant of Venice",
-    descripcion: "Obra de teatro \"Merchant of Venice\" representada por los alumnos de 4º año. Duración: 20 min",
-    time: "Sabado 14:30", // HORARIO 24hs
-    Ubicacion: "Auditorio",
-    link: "#!ingles",
-  },
-
-
 
   {
     name: "Muestra de termoformado",
@@ -423,21 +479,21 @@ var actividades = [
   {
     name: "“Rock & Ford”",
     descripcion: "Música en vivo: “Rock & Ford”",
-    time: "Viernes 11:30", // HORARIO 24hs
+    time: "Viernes 11:45", // HORARIO 24hs
     Ubicacion: "Auditorio",
     link: "#!rock_and_ford",
   },
   {
     name: "“Rock & Ford”",
     descripcion: "Música en vivo: “Rock & Ford”",
-    time: "Viernes 16:30", // HORARIO 24hs
+    time: "Viernes 16:00", // HORARIO 24hs
     Ubicacion: "Auditorio",
     link: "#!rock_and_ford",
   },
   {
     name: "“Rock & Ford”",
     descripcion: "Música en vivo: “Rock & Ford”",
-    time: "Sabado 10:30", // HORARIO 24hs
+    time: "Sabado 10:00", // HORARIO 24hs
     Ubicacion: "Auditorio",
     link: "#!rock_and_ford",
   },
