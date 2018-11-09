@@ -29,7 +29,7 @@ var marcadores = [
     icon:"marker",
   },
   {
-    lat_lng:[-34.44480898590358, -58.70069656175336],
+    lat_lng:[-34.44469659110469, -58.700383527455756],
     description:"Salida",
     link:"folklore",
     img_url:"images/folklore_icon.png",
@@ -188,6 +188,13 @@ var marcadores = [
     description:"",
     link:"consolas_retro",
     img_url:"images/console_icon.png",
+    icon:"marker",
+  },
+  {
+    lat_lng:[-34.44433043533652, -58.70079928835676],
+    description:"",
+    link:"matejuegos",
+    img_url:"images/mate_icon.png",
     icon:"marker",
   },
 ]

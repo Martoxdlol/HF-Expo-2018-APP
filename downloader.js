@@ -37,6 +37,20 @@ var lista = [
     descripcion: "Taller de carpinteria",
   },
   {
+    title: "Mate-Juegos",
+    name: "matejuegos",
+    file: "pages/secciones/matejuegos.html",
+    tags: "Juegos matematicos olimpiada oma",
+    descripcion: "Juegos matemáticos al estilo OMA",
+  },
+  {
+    title: "Handball",
+    name: "handball",
+    file: "pages/secciones/handball.html",
+    tags: "handball partido deporte fisica",
+    descripcion: "Partidos de handball",
+  },
+  {
     title: "Mapa",
     name: "mapa",
     file: "pages/especial/mapa_frame.html",
