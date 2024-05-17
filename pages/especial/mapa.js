@@ -241,7 +241,7 @@ var p2 = {lat: -34.44452793, lng: -58.70010336};
 var pos1 = [-34.44431357, -58.70076184];
 var pos2 = [-34.44452793, -58.70010336];
 
-mapboxgl.accessToken = 'pk.eyJ1IjoibWFydG94ZGxvbCIsImEiOiJjam13c2g4YzAzbTR1M3dueWlydWpmOTVxIn0.V2jnYL-7xKKY14Oj5BSCaw';
+mapboxgl.accessToken = 'pk.eyJ1IjoibWFydG94ZGxvbCIsImEiOiJjazVyb3E4aXQwZmJwM2RsbTdubTJnbmpvIn0.sZbSb0BLs36oNsu3a8RX0A';
 
 
 
